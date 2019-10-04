@@ -81,6 +81,8 @@ export class AdmInterfaceSpecificationServices implements OnDestroy {
 
     update(form: NgForm) {
         const Data = form.value;
+        console.log(Data);
+        console.log(Data.updatedDate);
         return new Promise((resolve, reject) => {
             this.apollo.mutate({
                 mutation: Queries.updateMutation,
@@ -90,7 +92,8 @@ export class AdmInterfaceSpecificationServices implements OnDestroy {
                     category: Data.category,
                     specifications: Data.specifications,
                     descriptions: Data.descriptions,
-                    status: Data.status
+                    updatedDate: Data.updatedDate,
+                    status: Data.status,
                 },
             }).subscribe(({ data }: any) => {
                 console.log(data);
@@ -107,6 +110,7 @@ export class AdmInterfaceSpecificationServices implements OnDestroy {
         console.log(`Service getDetails {id: ${idObj}}`);
         return new Promise((resolve, reject) => {
             this.apollo.watchQuery({ // using mutation for fetch latest data
+                notifyOnNetworkStatusChange: true,
                 query: Queries.detailsQuery,
                 variables: { id: idObj }
             }).valueChanges.subscribe(({ data, loading }: any) => {

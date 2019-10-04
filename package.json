@@ -1,15 +1,15 @@
 {
   "name": "client",
   "version": "0.0.0",
-  "homepage": "https://tintrunghuynh.github.io/XA-Product",
+  "homepage": "https://tintrunghuynh.github.io/XA-Product-Client",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --base-href=/",
-    "build": "ng build",
+    "build": "ng build --base-href=/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href /XA-Product/"
+    "deploy": "ng deploy --base-href /XA-Product-Client/"
   },
   "private": true,
   "dependencies": {

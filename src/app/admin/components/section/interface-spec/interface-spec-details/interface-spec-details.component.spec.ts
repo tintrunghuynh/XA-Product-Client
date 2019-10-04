@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AdmInterfaceSpecDetailsComponent } from './interface-spec-details.component';
+import { AdmInterfaceSpecDetailsComponent } from "./interface-spec-details.component";
 
-describe('AdmInterfaceSpecDetailsComponent', () => {
+describe("AdmInterfaceSpecDetailsComponent", () => {
   let component: AdmInterfaceSpecDetailsComponent;
   let fixture: ComponentFixture<AdmInterfaceSpecDetailsComponent>;
 
@@ -19,7 +19,7 @@ describe('AdmInterfaceSpecDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

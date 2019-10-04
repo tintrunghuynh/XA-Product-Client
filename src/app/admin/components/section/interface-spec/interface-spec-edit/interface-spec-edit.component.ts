@@ -32,11 +32,25 @@ export class AdmInterfaceSpecEditComponent implements OnInit {
         await this.getDetails();
         this.isLoadingResults = false;
     }
-
+    // {
+    //     data:
+    //     {
+    //         articles: [
+    //             {
+    //                 id: '6543757061', title: 'Does It Pay to Be a Writer?', published: true, author: { name: 'John Doe', }
+    //             },
+    //             {
+    //                 id: '6543757062', title: 'The Genius of Insomnia', published: true, author: { name: 'Mike Kinski', }
+    //             }
+    //         ]
+    //     }
+    // }
     async getDetails() {
         await this.services.getDetails(this.route.snapshot.params._id).then((resp: any) => {
             if (resp.ok) {
                 this.resp = resp;
+                console.log(`resp`);
+                console.log(this.resp);
                 const arrToPush: any[] = [];
                 // tslint:disable-next-line: prefer-for-of
                 for (let index = 0; index < resp.data.specifications.length; index++) {
@@ -62,6 +76,8 @@ export class AdmInterfaceSpecEditComponent implements OnInit {
                     category: [resp.data.category, Validators.required],
                     specifications: this.formBuilder.array(arrToPush),
                     descriptions: [resp.data.descriptions, Validators.required],
+                    createdDate: [resp.data.createdDate],
+                    updatedDate: [resp.data.updatedDate],
                     status: [resp.data.status, Validators.required],
                 });
                 // * Adding valueChange Listenner for the Specification List that loaded

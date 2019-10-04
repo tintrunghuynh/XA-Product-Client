@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AdmInterfaceSpecCreateComponent } from './interface-spec-create.component';
+import { AdmInterfaceSpecCreateComponent } from "./interface-spec-create.component";
 
-describe('AdmInterfaceSpecCreateComponent', () => {
+describe("AdmInterfaceSpecCreateComponent", () => {
   let component: AdmInterfaceSpecCreateComponent;
   let fixture: ComponentFixture<AdmInterfaceSpecCreateComponent>;
 
@@ -19,7 +19,7 @@ describe('AdmInterfaceSpecCreateComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

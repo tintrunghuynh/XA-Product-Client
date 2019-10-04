@@ -79,6 +79,7 @@ export const updateMutation = gql`
         $category: String!,
         $specifications: JSON!,
         $descriptions: String!,
+        $updatedDate: String!
         $status: String!)
     {
         updateInterfaceSpecification(
@@ -87,6 +88,7 @@ export const updateMutation = gql`
             category:           $category
             specifications:     $specifications,
             descriptions:       $descriptions,
+            updatedDate:        $updatedDate,
             status:             $status,
         ) {
             ok,

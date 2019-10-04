@@ -210,20 +210,31 @@
                 </mat-error>
             </mat-form-field>
 
-            <!-- <mat-form-field class="full-width">
+           <mat-form-field class="full-width">
                 <input
-                    class=""
                     matInput
-                    required
-                    placeholder="Status"
-                    formControlName="status"
+                    [disabled]="true"
+                    formControlName="createdDate"
+                    placeholder="Created:"
+                    value="{{
+                        resp.data.createdDate | date: 'dd/MM/yyyy hh:mm:ss'
+                    }}"
+                    class="color-black"
                 />
-                <mat-error>
-                    <app-messages-control
-                        [control]="FORM.get('status')"
-                    ></app-messages-control>
-                </mat-error>
-            </mat-form-field> -->
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input
+                    matInput
+                    [disabled]="true"
+                    formControlName="updatedDate"
+                    placeholder="Updated:"
+                    value="{{
+                        resp.data.updatedDate | date: 'dd/MM/yyyy hh:mm:ss'
+                    }}"
+                    class="color-black"
+                />
+            </mat-form-field>
 
             <div class="button-row">
                 <button
