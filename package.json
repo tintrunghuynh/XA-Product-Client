@@ -4,7 +4,8 @@
   "homepage": "https://tintrunghuynh.github.io/XA-Product-Client",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --base-href=/",
+    "start": "dev",
+    "dev": "ng serve --base-href=/",
     "build": "ng build --base-href=/",
     "test": "ng test",
     "lint": "ng lint",

@@ -151,9 +151,7 @@ export class AppModule {
 
     constructor(private apollo: Apollo, private httpLink: HttpLink) {
         // Reading Environment Variables
-        // const GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "https://14.245.115.96:8080/graphql-retrieve";
-        const GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "http://xaproduct.ddns.net:8080/graphql-retrieve";
-        // const GRAPHQL_BASEURI = "http://xa-product-server-server.apps.us-west-2.starter.openshift-online.com/graphql-retrieve";
+        const GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "https://xaproductserver.herokuapp.com/graphql-retrieve";
         console.log(`GRAPHQL_BASEURI: ${GRAPHQL_BASEURI}`);
         this.apollo.create({
             link: this.httpLink.create({
