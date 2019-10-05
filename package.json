@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng deploy --base-href /XA-Product-Client/"
+    "deploy": "ng deploy --base-href /XA-Product-Client/",
+    "deploy2": "ng build --prod --output-path docs --base-href /XA-Product-Client/ && ng deploy --base-href /XA-Product-Client/",
+    "deploy3": "ng deploy --prod --output-path --base-href /XA-Product-Client/"
   },
   "private": true,
   "dependencies": {

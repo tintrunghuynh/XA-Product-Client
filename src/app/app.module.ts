@@ -153,6 +153,7 @@ export class AppModule {
         // Reading Environment Variables
         const GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "https://xaproductserver.herokuapp.com/graphql-retrieve";
         console.log(`GRAPHQL_BASEURI: ${GRAPHQL_BASEURI}`);
+        console.log(`ng deploy --base-href /XA-Product-Client/`);
         this.apollo.create({
             link: this.httpLink.create({
                 uri: GRAPHQL_BASEURI,
