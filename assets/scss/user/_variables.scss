@@ -16,32 +16,51 @@ $list-hover-bg: rgba(51, 51, 77, 0.7);
 $text-shadow: 0.2rem 0.2rem 0.2rem rgba(#000, 1);
 $text-shadow-white: 0.2rem 0.2rem 0.2rem rgba(#ffffff, 1);
 @mixin main-background-color($deg) {
-  background: lightgrey
-    linear-gradient($deg, rgba(202, 173, 173, 0.2), rgba(77, 166, 255, 0.5) 20vh 60vh, rgba(255, 102, 0, 0.2));
-  background-attachment: no-repeat;
-  background-size: cover;
+    background: lightgrey
+        linear-gradient(
+            $deg,
+            rgba(202, 173, 173, 0.2),
+            rgba(77, 166, 255, 0.5) 20vh 60vh,
+            rgba(255, 102, 0, 0.2)
+        );
+    background-attachment: no-repeat;
+    background-size: cover;
 }
 
-@mixin main-background-color-not-rotate(){
-  background: lightgrey
-    linear-gradient(rgba(255, 255, 255, 0.2), rgba(77, 166, 255, 0.5) 20vh 60vh, rgba(255, 102, 0, 0.2));
-  background-attachment: no-repeat;
-  background-size: cover;
+@mixin main-background-color-not-rotate() {
+    background: lightgrey
+        linear-gradient(
+            rgba(255, 255, 255, 0.2),
+            rgba(77, 166, 255, 0.5) 20vh 60vh,
+            rgba(255, 102, 0, 0.2)
+        );
+    background-attachment: no-repeat;
+    background-size: cover;
 }
 
 @mixin main-background-layer {
-  background: rgba(211, 211, 211, 0.2);
-  background-attachment: fixed;
+    background: rgba(211, 211, 211, 0.2);
+    background-attachment: fixed;
 }
 
 @mixin main-hover-button-bgcolor($deg) {
-  background-color: rgba(255, 204, 153, 1);
-  background-image: linear-gradient($deg, rgba(199, 32, 32, 0.1), rgba(77, 166, 255, 0.5), rgba(0, 102, 255, 0.2));
+    background-color: rgba(255, 204, 153, 1);
+    background-image: linear-gradient(
+        $deg,
+        rgba(199, 32, 32, 0.1),
+        rgba(77, 166, 255, 0.5),
+        rgba(0, 102, 255, 0.2)
+    );
 }
 
 @mixin main-txt-color($deg) {
-  color: #ffcc99;
-  color: linear-gradient($deg, rgba(255, 26, 198, 0.2), rgba(204, 204, 179, 1), rgba(0, 102, 255, 0.6));
+    color: #ffcc99;
+    color: linear-gradient(
+        $deg,
+        rgba(255, 26, 198, 0.2),
+        rgba(204, 204, 179, 1),
+        rgba(0, 102, 255, 0.6)
+    );
 }
 
 // /*********************************************************

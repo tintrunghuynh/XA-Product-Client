@@ -1,6 +1,8 @@
 //import
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Titillium Web");
+// @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese");
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
 @import "user/variables.scss";
 @import "user/btn.scss";
 @import "user/main.scss";
@@ -13,7 +15,6 @@
 @import "admin/header.scss";
 @import "admin/nav.scss";
 @import "admin/section.scss";
-// @import "../node_modules/font-awesome/scss/font-awesome";
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -26,16 +27,16 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
-    &:before {
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -2;
-        @include main-background-layer();
-    }
+    // &:before {
+    //     content: "";
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     z-index: -2;
+    //     @include main-background-layer();
+    // }
 
     table {
         width: 100%;
@@ -73,6 +74,7 @@ body {
     mat-form-field {
         margin: 1rem;
     }
+
     &.inputForm {
         input,
         textarea {
@@ -288,6 +290,15 @@ body {
             transform: translateX(300px) skewX(-15deg);
             transition: 1.5s;
         }
+    }
+
+    .borderless {
+        border: none !important;
+    }
+
+    // Mat
+    .mat-sort-header-arrow {
+        color: yellow !important;
     }
 }
 
