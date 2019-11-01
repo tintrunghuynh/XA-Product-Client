@@ -6,12 +6,12 @@
     "ng": "ng",
     "start": "npm run dev",
     "dev": "ng serve  --base-href=/",
-    "build": "ng build --base-href /",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng deploy",
-    "heroku":  "npm run build && git add . && git commit -m 'auto-deploy' && git push heroku master"
+    "heroku":  "git add . && git commit -m 'auto-deploy' && git push heroku master"
   },
   "private": true,
   "dependencies": {
