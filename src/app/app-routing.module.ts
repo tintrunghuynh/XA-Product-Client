@@ -32,9 +32,11 @@ import { AdmUserCreateComponent } from "./admin/components/section/user/user-cre
 import { AdmUserDetailsComponent } from "./admin/components/section/user/user-details/user-details.component";
 import { AdmUserEditComponent } from "./admin/components/section/user/user-edit/user-edit.component";
 
+import { IntroduceComponent } from "./admin/components/introduce/introduce.component";
+
 const routes: Routes = [
     {
-        path: "",
+        path: "user",
         component: ClientComponent,
         children: [
             {
@@ -83,8 +85,22 @@ const routes: Routes = [
         ]
     },
     {
+        path: "aboutme",
+        component: IntroduceComponent,
+        //     children: [
+        //         {
+        //             path: "login", component: LoginComponent
+        //         }, {
+        //             path: "register", component: RegisterComponent
+        //         },
+        //         {
+        //             path: "profile", component: ProfileComponent
+        //         }
+        //     ]
+    },
+    {
         path: "**",
-        redirectTo: "", pathMatch: "full"
+        redirectTo: "aboutme", pathMatch: "full"
     }
 ];
 

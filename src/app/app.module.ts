@@ -19,10 +19,15 @@ import {
     MatCardModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSliderModule
 } from "@angular/material";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+
+// About me
+import { IntroduceComponent } from "./admin/components/introduce/introduce.component";
 
 // User
 import { NavComponent } from "./client/component/nav/nav-component.component";
@@ -113,7 +118,8 @@ import { MessagesControlComponent } from "./services/validator/components/messag
         AdmCartCreateComponent,
         AdmCartDetailsComponent,
         AdmCartEditComponent,
-        MessagesControlComponent
+        MessagesControlComponent,
+        IntroduceComponent
     ],
     imports: [
         BrowserModule,
@@ -141,7 +147,8 @@ import { MessagesControlComponent } from "./services/validator/components/messag
         MatCardModule,
         MatFormFieldModule,
         MatDividerModule,
-        MatSelectModule
+        MatSelectModule,
+        MatSliderModule
     ],
     providers: [GeneralValidationService],
     bootstrap: [AppComponent]
@@ -151,9 +158,11 @@ export class AppModule {
 
     constructor(private apollo: Apollo, private httpLink: HttpLink) {
         // Reading Environment Variables
-        const GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "https://xaproductserver.herokuapp.com/graphql-retrieve";
+        let GRAPHQL_BASEURI = process.env.GraphQL_URL_PATH || "https://xaproductserver.herokuapp.com/graphql-retrieve";
+        if (process.env.NODE_ENV === "development") {
+            GRAPHQL_BASEURI = "http://127.0.0.1:8080/graphql-retrieve";
+        }
         console.log(`GRAPHQL_BASEURI: ${GRAPHQL_BASEURI}`);
-        console.log(`ng deploy --base-href /XA-Product-Client/`);
         this.apollo.create({
             link: this.httpLink.create({
                 uri: GRAPHQL_BASEURI,

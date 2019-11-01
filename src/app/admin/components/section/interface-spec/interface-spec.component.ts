@@ -35,6 +35,7 @@ export class AdmInterfaceSpecComponent implements OnInit {
             this.data = this.resp.data.getListInterfaceSpecifications;
             this.dataSource = new MatTableDataSource(this.resp.data.getListInterfaceSpecifications);
             this.dataSource.sort = this.sort;
+            this.dataSource.sortingDataAccessor = (data, header) => data[header];
             this.isLoadingResults = false;
         });
     }
