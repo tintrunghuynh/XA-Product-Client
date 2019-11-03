@@ -13,8 +13,8 @@
         "e2e": "ng e2e",
         "deploy": "ng deploy",
         "logs": "heroku logs --tail",
-        "heroku": "git add ./dist/client/* && git commit -m 'auto-deploy' && git push heroku master",
-        "heroku2": "git add . && git commit -m 'auto-deploy' && git push heroku master"
+        "heroku": "git add . && git commit -m 'auto-deploy' && git push heroku master",
+        "heroku2": "git add ./dist/client/* && git commit -m 'auto-deploy' && git push heroku master"
     },
     "private": true,
     "dependencies": {
