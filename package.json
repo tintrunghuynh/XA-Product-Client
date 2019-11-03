@@ -5,7 +5,8 @@
     "scripts": {
         "ng": "ng",
         "dev": "ng serve --base-href=/",
-        "build-prod": "ng build --prod --base-href /",
+        "build": "ng build --prod --base-href /",
+        "heroku-postbuild": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
