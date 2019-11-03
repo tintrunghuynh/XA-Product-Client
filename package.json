@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "homepage": "https://tintrunghuynh.github.io/XA-Product-Client",
     "scripts": {
+        "start":"npm run build",
         "ng": "ng",
         "dev": "ng serve  --base-href=/",
         "build": "ng build --prod --base-href './'",
