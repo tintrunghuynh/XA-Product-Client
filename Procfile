@@ -1,1 +1,1 @@
-web: ng build --prod --base-href /
+web: node server.js
