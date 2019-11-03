@@ -11,6 +11,7 @@
 @media not print {
     p {
         font-size: 1.2vw;
+        margin-bottom: 1vw;
     }
 
     li {
@@ -36,8 +37,9 @@ $main-purple: rgb(84, 43, 124);
     display: inline;
     > img {
         margin: 0.5vw;
-        width: 2vw;
-        height: 2vw;
+        width: 2.5vw;
+        height: 2.5vw;
+        border: 0.5vw solid #fff;
     }
 }
 
@@ -54,6 +56,7 @@ $main-purple: rgb(84, 43, 124);
             color: rgba(#33334d, 0.9);
             font-weight: 1000;
             font-size: $font-size-after;
+            border-bottom: 0.2vw solid;
         }
         &:not(.first-year):after {
             bottom: calc(#{$font-size-after}* -0.8);
@@ -76,16 +79,26 @@ $main-purple: rgb(84, 43, 124);
         display: flex;
         flex-direction: column-reverse;
         margin: 0 1rem 0 1rem;
-        &:not(.last-info) {
-            border-top: 0.2rem solid #fff;
+        &:not(.last-info):after {
+            content: "";
+            box-shadow: -0 -0.5vw #fff;
+            position: absolute;
+            top: 0.5vw;
+            left: 20%;
+            width: 80%;
+            height: 2vw;
+            z-index: 2;
+            color: #fff;
         }
     }
 }
 
 @mixin background-keyboard {
-    background: url("~/assets/Imgs/introduce_keyboard.jpg") rgba(#333, 0.4)
+    // background: url("~/assets/Imgs/introduce_keyboard.jpg") rgba(#333, 0.4)
+    //     no-repeat;
+    background: url("https://photos.app.goo.gl/tFCVQ8uQRr96KPu46") rgba(#333, 0.4)
         no-repeat;
-    background-position: 0% 65%;
+    background-position: 0% 55%;
     background-size: 100%;
     background-blend-mode: overlay;
 }
@@ -107,33 +120,38 @@ div[chckLoc="Intro"] {
         margin-bottom: 2rem;
         position: relative;
         > i {
-            margin-right: 2rem;;
+            margin-right: 2rem;
         }
         .address-bar {
             background: silver;
             min-width: 100%;
-            &:after{
-                content: ""
+            &:after {
+                content: "";
             }
         }
     }
     .row1 {
         @include background-keyboard();
+        border-bottom: 1rem solid #fff;
+        border-right: 1rem solid #fff;
     }
     [name="contact"] {
         text-align: center;
         border-right: $border-double-white;
-        background: rgba(#33334d, 0.8);
+        // background: rgba(224, 129, 227, 0.2);
+        background: rgba(85, 48, 219, 0.2);
         position: relative;
         .name {
             margin: 1rem 0 0 0;
             > h1 {
-                color: rgba(219, 35, 243, 0.4);
+                color: rgb(147, 62, 151);
                 font-family: "Pacifico", cursive;
                 font-size: 6rem;
                 font-weight: 1000;
                 letter-spacing: 0.5rem;
-                -webkit-text-stroke: 0.2rem rgba(255, 255, 255, 1);
+                $color-outside: rgb(255, 255, 255);
+                -webkit-text-stroke: 0.3rem $color-outside;
+                text-shadow: 0rem 0.4rem #000;
                 text-transform: capitalize;
                 &:last-child {
                     margin-bottom: 2rem;
@@ -160,17 +178,23 @@ div[chckLoc="Intro"] {
         }
     }
     [name="panel"] {
+        max-height: 80%;
         color: #fff;
         display: inline;
-        // border-bottom: $border-double-white;
-        background: rgba(#333, 0.8);
+        border-bottom: 5rem solid white;
+        border-top: 5rem solid white;
+        border-right: $border-solid-white;
+        background: rgba(82, 77, 79, 0.7);
         background-blend-mode: overlay;
         > h1 {
             margin: 2rem;
         }
-        .career-objective {
+        p.career-objective {
+            font-size: 2rem;
             margin: 2rem 2rem 2rem 4rem;
             text-align: justify;
+            text-shadow: 0.05rem 0.07rem #000;
+            -webkit-text-stroke: 0.05rem #fff;
         }
     }
 
@@ -190,6 +214,7 @@ div[chckLoc="Intro"] {
         justify-content: space-between;
         [year] {
             width: 100%;
+            position: relative;
             @include milestones();
             @include info();
             &.y2017 {
