@@ -1,13 +1,22 @@
 <div chckLoc="Intro" class="AboutMe">
     <ng-container>
         <div class="homepage">
-            <i class="fas fa-home"></i>
-            <div class="address-bar"></div>
+            <a href="https://bit.ly/xa-demo" target="_blank"
+                ><i class="fas fa-home"></i
+            ></a>
+            <div class="address-bar">
+                <a href="https://bit.ly/xa-aboutme" target="_blank"
+                    >https://bit.ly/xa-aboutme</a
+                >
+                <i class="material-icons print-icon" onclick="window.print();">
+                    print
+                </i>
+            </div>
         </div>
     </ng-container>
     <ng-container>
-        <div class="full-width row1">
-            <div fxFlex="40%" name="contact">
+        <div class="full-width row1" id="row1">
+            <div id="contact">
                 <div class="name">
                     <h1>Huỳnh</h1>
                     <h1>Trung Tín</h1>
@@ -21,7 +30,7 @@
                     <p class="private-info">TinTrungHuynh.Alviss@gmail.com</p>
                 </div>
             </div>
-            <div fxFlex="60%" name="panel">
+            <div id="panel">
                 <ng-container>
                     <h1>CAREER OBJECTIVE</h1>
                     <p class="career-objective">
@@ -33,11 +42,11 @@
                 </ng-container>
             </div>
         </div>
-        <hr />
-        <div class="full-width row2">
-            <div name="milestones-area">
+
+        <div class="full-width row2" id="row2">
+            <div id="milestones-area">
                 <div year class="y2017">
-                    <div class="milestones first-year" fxFlex="20%">
+                    <div class="milestones first-year">
                         <div class="Month July">
                             <p>July</p>
                         </div>
@@ -45,9 +54,11 @@
                             <p>September</p>
                         </div>
                     </div>
-                    <div class="info" fxFlex="80%">
+                    <div class="info">
                         <div class="Month July">
-                            <p>- Starting Working At DOUNETS</p>
+                            <p class="info-content">
+                                Starting Working At DOUNETS
+                            </p>
                             <ul>
                                 <li>Works With EDI Technology</li>
                                 <li>
@@ -59,31 +70,34 @@
                                             src="/assets/Icons/icon-javascript.jpg"
                                             class="icon-skill"
                                             alt="JavaScript"
+                                            title="JavaScript"
                                         />
                                         <img
                                             src="/assets/Icons/icon-html5.png"
                                             class="icon-skill"
                                             alt="HTML5"
+                                            title="HTML5"
                                         />
                                         <img
                                             src="/assets/Icons/icon-bootstrap.png"
                                             class="icon-skill"
                                             alt="Bootstrap"
+                                            title="Bootstrap"
                                         />
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="Month September">
-                            <p>
-                                - Graduated From FPT-Aptech Computer Education
-                                HCM (Higher Diploma)
+                            <p class="info-content">
+                                Graduated From FPT-Aptech Computer Education HCM
+                                (Higher Diploma)
                             </p>
                         </div>
                     </div>
                 </div>
                 <div year class="y2018">
-                    <div class="milestones" fxFlex="20%">
+                    <div class="milestones">
                         <div class="Month May">
                             <p>May</p>
                         </div>
@@ -91,44 +105,129 @@
                             <p>June</p>
                         </div>
                     </div>
-                    <div class="info" fxFlex="80%">
+                    <div class="info">
                         <div class="Month May">
-                            <p>- Stop Working At DOUNETS</p>
+                            <p class="info-content">Stop Working At DOUNETS</p>
                         </div>
                         <div class="Month June">
-                            <p>- Start Working As Freelancer</p>
+                            <p class="info-content">
+                                Start Working As Freelancer
+                            </p>
+                            <div class="technologies">
+                                <img
+                                    src="/assets/Icons/icon-javascript.jpg"
+                                    class="icon-skill"
+                                    alt="JavaScript"
+                                    title="JavaScript"
+                                />
+                                <img
+                                    src="/assets/Icons/icon-html5.png"
+                                    class="icon-skill"
+                                    alt="HTML5"
+                                    title="HTML5"
+                                />
+                                <img
+                                    src="/assets/Icons/icon-bootstrap.png"
+                                    class="icon-skill"
+                                    alt="Bootstrap"
+                                    title="Bootstrap"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div year class="y2019">
-                    <div class="milestones" fxFlex="20%">
-                        <div class="Month May">
-                            <p>May</p>
-                        </div>
-                        <div class="Month September">
-                            <p>September</p>
+                    <div class="milestones">
+                        <div class="Month June">
+                            <p>June</p>
                         </div>
                     </div>
-                    <div class="info last-info" fxFlex="80%">
-                        <div class="Month May">
-                            <p>- Starting Working At DOUNETS</p>
-                            <ul>
-                                <li>Works With EDI Technology</li>
-                                <li>
-                                    Convert An Existing Web To Mobile-First
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="Month September">
-                            <p>
-                                - Graduated From FPT-Aptech Computer Education
-                                HCM (Higher Diploma)
+                    <div class="info last-info">
+                        <div class="Month June">
+                            <p class="info-content">
+                                Starting Learning MEAN Stack
                             </p>
+                            <p class="info-content">
+                                Demo:
+                                <span
+                                    ><a href="https://bit.ly/xa-demo"
+                                        >bit.ly/xa-demo</a
+                                    ></span
+                                >
+                            </p>
+                            <div class="technologies">
+                                <img
+                                    src="/assets/Icons/icon-mongodb.png"
+                                    class="icon-skill"
+                                    alt="MongoDB"
+                                    title="MongoDB"
+                                    tooltip
+                                />
+                                <img
+                                    src="/assets/Icons/icon-expressjs.png"
+                                    class="icon-skill"
+                                    alt="ExpressJS"
+                                    title="ExpressJS"
+                                />
+                                <img
+                                    src="/assets/Icons/icon-angular.png"
+                                    class="icon-skill"
+                                    alt="Angular"
+                                    title="Angular"
+                                />
+                                <img
+                                    src="/assets/Icons/icon-nodejs.png"
+                                    class="icon-skill"
+                                    alt="Nodejs"
+                                    title="Nodejs"
+                                />
+                                <img
+                                    src="/assets/Icons/icon-graphql.png"
+                                    class="icon-skill"
+                                    alt="Graphql"
+                                    title="Graphql"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="why-me"></div>
+            <div id="why-me">
+                <section class="experience">
+                    <article>
+                        <h1>Title</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Neque molestias animi unde dicta natus omnis
+                            magnam tempore fuga hic reiciendis! Explicabo in
+                            earum et labore, temporibus nemo delectus error
+                            accusantium?
+                        </p>
+                    </article>
+                </section>
+                <section class="additional-skills">
+                    <div class="technologies">
+                        <img
+                            src="/assets/Icons/icon-javascript.jpg"
+                            class="icon-skill"
+                            alt="JavaScript"
+                            title="JavaScript"
+                        />
+                        <img
+                            src="/assets/Icons/icon-html5.png"
+                            class="icon-skill"
+                            alt="HTML5"
+                            title="HTML5"
+                        />
+                        <img
+                            src="/assets/Icons/icon-bootstrap.png"
+                            class="icon-skill"
+                            alt="Bootstrap"
+                            title="Bootstrap"
+                        />
+                    </div>
+                </section>
+            </div>
         </div>
     </ng-container>
 </div>

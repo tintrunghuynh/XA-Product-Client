@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Titillium Web");
 // @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese");
-@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Patua+One&display=swap");
 @import "user/variables.scss";
 @import "user/btn.scss";
 @import "user/main.scss";
@@ -22,10 +22,16 @@ html {
     font-size: 10px;
 }
 body {
-    // min-width: 900px;
+    $min-width-var: 900px;
+    $max-width-var: 1920px;
+    min-width: $min-width-var;
+    max-width: $max-width-var;
+    min-height: calc(#{$min-width-var} / 16 * 9);
+    max-height: calc(#{$max-width-var} / 16 * 9);
     font: 1.5rem/1.5 "Muli Light Bold Italic", sans-serif;
     padding: 0;
-    margin: 0;
+    // margin: 0;
+    margin: auto;
     position: relative;
     // &:before {
     //     content: "";
