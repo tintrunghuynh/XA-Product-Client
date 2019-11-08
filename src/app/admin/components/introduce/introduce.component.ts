@@ -32,7 +32,6 @@ export class IntroduceComponent implements OnInit {
     loadingBackgroundRow1() {
         const bgArray = ["keyboard.jpg", "7.jpg"];
         const bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-        console.log(bg);
         $("#row1").css("background-image", `url("/assets/Imgs/${bg}")`);
     }
 }
