@@ -24,7 +24,7 @@ export class IntroduceComponent implements OnInit {
 
     setHeightOfRow2() {
         const heightRow1 = $("#row1").css("height");
-        $("#row2").css("height", `calc(${heightRow1} / 17 * 60)`);
+        $("#row2").css("min-height", `calc(${heightRow1} / 17 * 60)`);
         // console.log(`row1.height = ${$("#row1").css("height")}`);
         // console.log(`row2.height = ${$("#row2").css("height")}`);
     }
