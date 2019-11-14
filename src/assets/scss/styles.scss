@@ -26,8 +26,6 @@ body {
     $max-width-var: 1920px;
     min-width: $min-width-var;
     max-width: $max-width-var;
-    min-height: calc(#{$min-width-var} / 16 * 9);
-    max-height: calc(#{$max-width-var} / 16 * 9);
     font: 1.5rem/1.5 "Muli Light Bold Italic", sans-serif !important;
     padding: 0;
     margin: auto !important;
