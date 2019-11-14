@@ -39,24 +39,24 @@
 // Variable
 $double-border-white-width: 1.5rem;
 $border-double-white: $double-border-white-width double #fff;
-$border-solid-white: calc(#{$double-border-white-width}/ 3) solid #fff; // divided for 3 because border double style has 3 parts: solid/space/solid
+$border-solid-white: decimal-floor(calc(#{$double-border-white-width}/ 3), 4)
+    solid #fff; // divided for 3 because border double style has 3 parts: solid/space/solid
 $main-purple: rgba(49, 34, 76, 0.9);
-$homepage-margin-bottom: 2rem;
 $intro-margin: 1rem;
 $col1-width: 40%;
 $milestones-width: 35%;
 $milestones-border-right-width: 1.5rem;
-$info-width: calc(100% - #{$milestones-width});
-$homepage-height: 3vh;
-$row1-height: 17vh;
+$info-width: decimal-floor(calc(100% - #{$milestones-width}), 4);
+$row1-height: 20vh;
 $row1-width-border-bottom: 1rem;
 $row2-margin-bottom: 1rem;
 // Technology icons
 .technologies {
     > img {
-        margin: 0.5rem 1rem;
+        margin: 0.5rem 0.5rem;
         width: 4rem;
         height: 4rem;
+        border: 0;
         border: 0.1rem solid #fff;
     }
 }
@@ -70,9 +70,10 @@ a {
         width: $milestones-width;
         flex-direction: column-reverse;
         position: relative;
+        border: 0;
         border-right: $milestones-border-right-width solid #544175;
         $font-size-after: 2em;
-        &:after {
+        &::after {
             position: absolute;
             right: 1rem;
             color: rgba(#33334d, 0.9);
@@ -81,7 +82,7 @@ a {
             box-shadow: 0 0.2rem;
         }
         &:not(.first-year):after {
-            bottom: calc(#{$font-size-after}* -0.45);
+            bottom: decimal-floor(calc(#{$font-size-after}* -0.45), 4);
         }
         &.first-year:after {
             bottom: calc(#{$font-size-after}* 0.2);
@@ -95,13 +96,13 @@ a {
                 text-align: end;
                 margin-right: 1rem;
                 color: rgba(#33334d, 0.8);
-                &:after {
+                &::after {
                     content: "";
                     position: absolute;
                     top: 0.65em;
                     right: -1.5rem;
                     height: 0.3em;
-                    width: 1.5rem;
+                    width: $milestones-border-right-width;
                     background: #ebebeb;
                 }
             }
@@ -124,7 +125,10 @@ a {
             position: absolute;
             top: 0.7vw;
             right: 10%;
-            width: calc(#{$info-width} + #{$info-margin-right} - 20%);
+            width: decimal-floor(
+                calc(#{$info-width} + #{$info-margin-right} - 20%),
+                4
+            );
             height: 0.2vw;
             z-index: 2;
         }
@@ -138,7 +142,6 @@ a {
 }
 
 @mixin background-keyboard {
-    position: absolute;
     // background: url("/assets/Imgs/7.jpg") no-repeat;
     // background: url("/assets/Imgs/keyboard.jpg") no-repeat;
     // background: url("http://bit.ly/2qkY6RC") no-repeat;
@@ -160,39 +163,10 @@ div[chckLoc="Intro"] {
     min-width: 110rem;
     overflow: hidden;
 
-    .homepage {
-        max-width: 80%;
-        margin: auto;
-        margin-bottom: $homepage-margin-bottom;
-        color: #000;
-        font-size: 2vh;
-        display: flex;
-        height: $homepage-height;
-        i {
-            margin: auto;
-        }
-        .address-bar {
-            display: flex;
-            margin-left: 1vw;
-            width: 100%;
-            background: rgba(grey, 0.2);
-            border: 0.1vw solid #000;
-            > a {
-                margin-left: 2vw;
-            }
-            .print-icon {
-                font-size: 1em;
-                display: block;
-                margin-right: 2rem;
-                align-items: center;
-            }
-        }
-    }
-
     .row1 {
         @include background-keyboard();
+        border: 0;
         border-bottom: $row1-width-border-bottom solid #fff;
-        border-right: 1rem solid #fff;
         display: flex;
         min-height: $row1-height;
         position: relative;
@@ -200,6 +174,7 @@ div[chckLoc="Intro"] {
     #contact {
         width: $col1-width;
         text-align: center;
+        border: 0;
         border-right: $border-double-white;
         // background: rgba(224, 129, 227, 0.2);
         background: rgba(50, 31, 43, 0.15);
@@ -218,7 +193,7 @@ div[chckLoc="Intro"] {
                 font-family: "Pacifico", cursive;
                 font-size: 6rem;
                 font-weight: 1000;
-                letter-spacing: 0.12em;
+                letter-spacing: 0.15em;
                 -webkit-text-stroke: 0.03em #fff;
                 text-shadow: 0rem 0.4rem #000;
                 text-transform: capitalize;
@@ -234,28 +209,28 @@ div[chckLoc="Intro"] {
             color: rgb(232, 232, 232);
             background-color: $main-purple;
             overflow: hidden;
-            margin: 0.2em 0 0.2em -1em;
+            margin: 0.2em 0 0.2em -1.5em;
             $icon-font-size: 1.2em;
             .icon {
                 margin: 0.2em 0.5em 0.2em 2em;
                 font-size: $icon-font-size;
             }
             .private-info {
-                margin: calc(0.2em + #{$icon-font-size} / 3) 0;
+                margin: decimal-floor(calc(0.2em + #{$icon-font-size} / 3), 4) 0;
                 // margin: calc(0.5em + #{$icon-font-size} / 2) 0.2em calc(0.5em + #{$icon-font-size} / 2) 0.2em;
-                font-size: calc(#{$icon-font-size} * 0.6);
+                font-size: decimal-floor(calc(#{$icon-font-size} * 0.6), 4);
                 font-weight: 600;
             }
         }
     }
     #panel {
         color: #fff;
-        width: calc(100% - #{$col1-width});
+        width: decimal-floor(calc(100% - #{$col1-width}), 4);
         display: inline-flex;
         flex-direction: column;
+        border: 0;
         border-bottom: 5rem solid white;
         border-top: 5rem solid white;
-        border-right: $border-solid-white;
         background: rgba(8, 247, 255, 0.2);
         background-blend-mode: overlay;
         position: relative;
@@ -263,7 +238,7 @@ div[chckLoc="Intro"] {
         $panel-before-width: 1em;
         $panel-shadow-width: 2em;
         $stripe-lines-color: #fff;
-        &:before {
+        &::before {
             content: "";
             position: absolute;
             left: $panel-before-left;
@@ -275,14 +250,10 @@ div[chckLoc="Intro"] {
             ); // Using filter instead box-shadow for printer
             background: $stripe-lines-color;
         }
-        &:after {
+        &::after {
             content: "";
             position: absolute;
             bottom: 1em;
-            // left: calc(
-            //     #{$panel-before-left} + #{$panel-before-width} + #{$panel-shadow-width} -
-            //         2em
-            // );
             left: 0;
             width: 100%;
             height: 1em;
@@ -308,7 +279,7 @@ div[chckLoc="Intro"] {
                 }
                 25% {
                     color: rgb(26, 110, 116);
-                    -webkit-text-stroke: 0.05em rgba(158, 202, 196, 0.733);
+                    -webkit-text-stroke: 0.05em rgba(202, 158, 158, 0.733);
                 }
                 50% {
                     color: #003ca78f;
@@ -337,35 +308,35 @@ div[chckLoc="Intro"] {
     .row2 {
         display: flex;
         margin-bottom: $row2-margin-bottom;
-
         background-color: rgba(92, 107, 109, 0.4);
         // height calculated by ts class, row1 = 17vh, row2 = (px) 60/17 * row1.width
         position: relative;
-        &:after {
-            // content: "";
-            // position: absolute;
-            // top: 0;
-            // left: 0;
-            // width: 100%;
-            // height: 100%;
-            // background: url(~/assets/Imgs/AndICallItBoke.jpg) no-repeat;
-            // background-color: rgba(#333, 0.4);
-            // background-position: 0% 45%;
-            // background-size: cover;
-            // background-blend-mode: color;
-            // opacity: 0.8;
-            // z-index: 1;
-            // filter: blur(2%);
-        }
+        // &::after {
+        // content: "";
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        // background: url(~/assets/Imgs/AndICallItBoke.jpg) no-repeat;
+        // background-color: rgba(#333, 0.4);
+        // background-position: 0% 45%;
+        // background-size: cover;
+        // background-blend-mode: color;
+        // opacity: 0.8;
+        // z-index: 1;
+        // filter: blur(2%);
+        // }
     }
 
     #milestones-area {
-        width: calc(
+        width: decimal-floor(calc(
             #{$col1-width} - #{$double-border-white-width} / 3
-        ); // divided for 3 because border double style has 3 parts: solid/space/solid
+        ),4); // divided for 3 because border double style has 3 parts: solid/space/solid
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-between;
+        border: 0;
         border-right: $border-solid-white;
         [year] {
             width: 100%;
@@ -378,7 +349,7 @@ div[chckLoc="Intro"] {
             &.y2017 {
                 height: 50%;
                 .milestones {
-                    &:after {
+                    &::after {
                         content: "2017";
                     }
                 }
@@ -392,7 +363,7 @@ div[chckLoc="Intro"] {
             &.y2018 {
                 height: 30%;
                 .milestones {
-                    &:after {
+                    &::after {
                         content: "2018";
                     }
                 }
@@ -407,7 +378,7 @@ div[chckLoc="Intro"] {
             &.y2019 {
                 height: 20%;
                 .milestones {
-                    &:after {
+                    &::after {
                         content: "2019";
                     }
                 }
@@ -422,14 +393,14 @@ div[chckLoc="Intro"] {
         display: flex;
         flex-direction: column;
         font-size: 2rem;
-        width: calc(
+        width: decimal-floor(calc(
             100% - #{$col1-width} - #{$double-border-white-width} * 2 / 3
-        ); // divided for 3 because border double style has 3 parts: solid/space/solid
+        ),4); // divided for 3 because border double style has 3 parts: solid/space/solid
         section {
             margin: 1.5em;
-            &:not(:first-child) {
-                border-bottom: 0.2em solid $main-purple;
-            }
+            // &:not(:first-child) {
+            //     border-bottom: 0.2em solid $main-purple;
+            // }
             article {
                 font-size: 1em;
                 h1 {
@@ -440,6 +411,8 @@ div[chckLoc="Intro"] {
                 margin: 1em 1em 0em 1em;
                 display: flex;
                 justify-content: center;
+                border: 0;
+                border-bottom: 0.2em solid rgba(49, 34, 76, 0.9);
             }
         }
     }
