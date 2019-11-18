@@ -24,7 +24,7 @@ html {
 body {
     $min-width-var: 900px;
     $max-width-var: 1920px;
-    min-width: $min-width-var;
+    // min-width: $min-width-var;
     max-width: $max-width-var;
     font: 1.5rem/1.5 "Muli Light Bold Italic", sans-serif !important;
     padding: 0;
@@ -109,6 +109,9 @@ body {
                 margin-right: 1rem !important;
             }
         }
+        &-auto{
+            margin: auto;
+        }
     }
 
     .flex {
@@ -119,6 +122,22 @@ body {
 
         &.jc-fe {
             justify-content: flex-end;
+        }
+        &-col{
+            display: flex;
+            flex-direction: column;
+            &-rev{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        &-row{
+            display: flex;
+            flex-direction: row;
+            &-rev{
+                display: flex;
+                flex-direction: row-reverse;
+            }
         }
     }
 
@@ -197,7 +216,9 @@ body {
             color: #000 !important;
         }
     }
-
+    .center{
+        text-align: center;
+    }
     .btn-hover-animate {
         display: inline-flex;
         justify-content: center;

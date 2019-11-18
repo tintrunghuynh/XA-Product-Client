@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
+const https = require('https');
 const app = express();
 
 // Serve only the static files form the dist directory
@@ -20,5 +21,8 @@ function onListening() {
     setInterval(function () {
         console.log("Pretend the HerokuApp from going to sleep.");
         http.get("http://xa-leather.herokuapp.com/");
-    }, 600000);
+        http.get("http://xaproductserver.herokuapp.com/");
+        https.get("https://xa-leather.herokuapp.com/");
+        https.get("https://xaproductserver.herokuapp.com/");
+    }, 300000);
 }
