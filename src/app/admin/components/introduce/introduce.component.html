@@ -17,7 +17,7 @@
             </div>
             <div id="panel">
                 <span class="panel-bar"></span>
-                <ng-container>
+                <section class="about-career">
                     <h1>CAREER OBJECTIVE</h1>
                     <p class="career-objective">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -26,7 +26,7 @@
                         repudiandae sunt magni cum tenetur id, veniam ipsam.
                     </p>
                     <span class="panel-bar"></span>
-                </ng-container>
+                </section>
             </div>
         </div>
         <div class="full-width row2" id="row2">
@@ -52,7 +52,7 @@
                                 <li class="task-item">
                                     Convert An Existing Web To Mobile-Friendly
                                     Version
-                                    <div class="technologies">
+                                    <div class="list-technologies">
                                         <img
                                             src="/assets/Icons/icon-javascript.jpg"
                                             class="icon-skill btn-hover-animate"
@@ -73,14 +73,9 @@
                                         />
                                     </div>
                                 </li>
-                            </ul>
-                            <p class="info-content">
-                                Freelancer-Project
-                            </p>
-                            <ul>
                                 <li class="task-item">
                                     Creating New Web App
-                                    <div class="technologies">
+                                    <div class="list-technologies">
                                         <img
                                             src="/assets/Icons/icon-mongodb.png"
                                             class="icon-skill btn-hover-animate"
@@ -141,7 +136,7 @@
                             <p class="info-content">
                                 Start Working As Freelancer
                             </p>
-                            <div class="technologies">
+                            <div class="list-technologies">
                                 <img
                                     src="/assets/Icons/icon-javascript.jpg"
                                     class="icon-skill btn-hover-animate"
@@ -180,52 +175,261 @@
                 </div>
             </div>
             <div id="why-me">
-                <section class="experience">
-                    <article>
+                <div class="experience">
+                    <section>
                         <h1>Title</h1>
-                        <p>
+                        <article>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Neque molestias animi unde dicta natus omnis
                             magnam tempore fuga hic reiciendis! Explicabo in
                             earum et labore, temporibus nemo delectus error
                             accusantium?
-                        </p>
+                        </article>
+                    </section>
+                </div>
+                <!-- End experience -->
+                <div class="additional-skills">
+                    <article class="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maiores harum cum eos esse. Esse quo explicabo
+                        voluptates! Non eligendi ex nemo maxime harum tempora
+                        odio adipisci, rerum corrupti odit. Dolorum.
                     </article>
-                </section>
-                <section class="additional-skills">
-                    <article name="">Write Some Thing</article>
+                    <div class="annotation">
+                        <div class="item" ref="shape-front-end">
+                            <div class="color-block front-end"></div>
+                            <p>Front-End</p>
+                        </div>
+                        <div class="item" ref="shape-back-end">
+                            <div class="color-block back-end"></div>
+                            <p>Back-End</p>
+                        </div>
+                        <div class="item" ref="shape-knowledge">
+                            <div
+                                class="color-block knowledge-technologies"
+                            ></div>
+                            <p>Knowledge/Platform</p>
+                        </div>
+                    </div>
+
                     <div id="shape-container">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 100 100"
+                            viewBox="-5 10 110 95"
                         >
-                            <polygon points="50 15, 100 100, 0 100" id="tritangle-building"/>
+                            <!-- triangle-->
+                            <polygon
+                                points="50 14, 101 100.75, -1 100.75"
+                                class="tritangle-building layer-background"
+                            />
+                            <!-- x0 = 50;    y0 = 71.666667;    x1 = 50;    y1 = 15;    x2 = 0;    y2 = 100;    x3 = 100;    y3 = 100; -->
+                            <!-- 50,71.666667        50,15       0,100       100,100 -->
+                            <polygon
+                                class="tritangle-building layer-front-end"
+                                points="50 71.666667, 50 15, 0 100"
+                                ref="shape-front-end"
+                            />
+                            <polygon
+                                class="tritangle-building layer-back-end"
+                                points="50 71.666667, 50 15, 100 100"
+                                ref="shape-back-end"
+                            />
+                            <polygon
+                                class="tritangle-building layer-knowledge"
+                                points="50 71.666667, 0 100, 100 100"
+                                ref="shape-knowledge"
+                            />
+                            <!-- End triangle -->
                         </svg>
-                        <!-- <div class="layer flex-col margin-auto">
-                            <h1>Front-End</h1>
+                        <particles
+                            [style]="style"
+                            [params]="params"
+                        ></particles>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="-5 10 110 95"
+                            class="border-stroke"
+                        >
+                            <polygon
+                                class="tritangle-building layer-front-end-stroke"
+                                points="50 71.666667, 50 15, 0 100"
+                                ref="shape-front-end"
+                            />
+                            <polygon
+                                class="tritangle-building layer-back-end-stroke"
+                                points="50 71.666667, 50 15, 100 100"
+                                ref="shape-back-end"
+                            />
+                            <polygon
+                                class="tritangle-building layer-knowledge-stroke"
+                                points="50 71.666667, 0 100, 100 100"
+                                ref="shape-knowledge"
+                            />
+                            <!-- End triangle -->
+                        </svg>
+                        <div class="layer-front-end">
                             <div class="img-block">
-                                <img
-                                    src="/assets/Icons/icon-javascript.jpg"
-                                    class="icon-skill btn-hover-animate"
-                                    alt="JavaScript"
-                                    title="JavaScript"
-                                />
-                                <img
-                                    src="/assets/Icons/icon-html5.png"
-                                    class="icon-skill btn-hover-animate"
-                                    alt="HTML5"
-                                    title="HTML5"
-                                />
-                                <img
-                                    src="/assets/Icons/icon-bootstrap.png"
-                                    class="icon-skill btn-hover-animate"
-                                    alt="Bootstrap"
-                                    title="Bootstrap"
-                                />
+                                <div class="img-outer javascript">
+                                    <img
+                                        src="/assets/Icons/icon-javascript.jpg"
+                                        class="icon-skill btn-hover-animate javascript"
+                                        alt="JavaScript"
+                                        title="JavaScript"
+                                    />
+                                </div>
+
+                                <div class="img-outer html5">
+                                    <img
+                                        src="/assets/Icons/icon-html5.png"
+                                        class="icon-skill btn-hover-animate html5"
+                                        alt="HTML5"
+                                        title="HTML5"
+                                    />
+                                </div>
+
+                                <div class="img-outer angular">
+                                    <img
+                                        src="/assets/Icons/icon-angular.png"
+                                        class="icon-skill btn-hover-animate angular"
+                                        alt="Angular"
+                                        title="Angular"
+                                    />
+                                </div>
+                                <div class="img-outer typescript">
+                                    <img
+                                        src="/assets/Icons/icon-typescript.png"
+                                        class="icon-skill btn-hover-animate typescript"
+                                        alt="TypeScript"
+                                        title="TypeScript"
+                                    />
+                                </div>
+                                <div class="img-outer about-css">
+                                    <div class="part">
+                                        <img
+                                            src="/assets/Icons/icon-css3.png"
+                                            class="icon-skill btn-hover-animate icon-css"
+                                            alt="CSS3"
+                                            title="CSS3"
+                                        />
+                                        <img
+                                            src="/assets/Icons/icon-bootstrap.png"
+                                            class="icon-skill btn-hover-animate icon-bootstrap"
+                                            alt="Bootstrap"
+                                            title="Bootstrap"
+                                        />
+                                        <img
+                                            src="/assets/Icons/icon-sass.png"
+                                            class="icon-skill btn-hover-animate icon-sass"
+                                            alt="SASS.SCSS"
+                                            title="SASS.SCSS"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div> -->
+                        </div>
+
+                        <div class="layer-back-end">
+                            <div class="img-block">
+                                <div class="img-outer nodejs">
+                                    <img
+                                        src="/assets/Icons/icon-nodejs.png"
+                                        class="icon-skill btn-hover-animate nodejs"
+                                        alt="NodeJS"
+                                        title="NodeJS"
+                                    />
+                                </div>
+
+                                <div class="img-outer graphql">
+                                    <img
+                                        src="/assets/Icons/icon-graphql.png"
+                                        class="icon-skill btn-hover-animate graphql"
+                                        alt="Graphql"
+                                        title="Graphql"
+                                    />
+                                </div>
+
+                                <div class="img-outer mongodb">
+                                    <img
+                                        src="/assets/Icons/icon-mongodb.png"
+                                        class="icon-skill btn-hover-animate mongodb"
+                                        alt="MongoDB"
+                                        title="MongoDB"
+                                    />
+                                </div>
+
+                                <div class="img-outer restapi">
+                                    <img
+                                        src="/assets/Icons/icon-restapi.png"
+                                        class="icon-skill btn-hover-animate restapi"
+                                        alt="REST API"
+                                        title="REST API"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layer-knowledge">
+                            <div class="img-block">
+                                <div class="img-outer linux">
+                                    <img
+                                        src="/assets/Icons/icon-linux.png"
+                                        class="icon-skill btn-hover-animate linux"
+                                        alt="Linux"
+                                        title="Linux"
+                                    />
+                                </div>
+
+                                <div class="img-outer windows">
+                                    <img
+                                        src="/assets/Icons/icon-windows.png"
+                                        class="icon-skill btn-hover-animate windows"
+                                        alt="Windows"
+                                        title="Windows"
+                                    />
+                                </div>
+
+                                <div class="img-outer git">
+                                    <img
+                                        src="/assets/Icons/icon-git.png"
+                                        class="icon-skill btn-hover-animate git"
+                                        alt="GIT"
+                                        title="GIT"
+                                    />
+                                </div>
+
+                                <div class="img-outer heroku">
+                                    <img
+                                        src="/assets/Icons/icon-heroku.png"
+                                        class="icon-skill btn-hover-animate heroku"
+                                        alt="Heroku"
+                                        title="Heroku"
+                                    />
+                                </div>
+
+                                <div class="img-outer java">
+                                    <img
+                                        src="/assets/Icons/icon-java.png"
+                                        class="icon-skill btn-hover-animate java"
+                                        alt="JAVA"
+                                        title="JAVA"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                </div>
+                <!-- End additional-skills -->
+                <aside class="link-ref">
+                    <div class="item">
+                        <div class="name-block">Resume as HTML</div>
+                        <a class="link" href="http://bit.ly/htt-about-me">bit.ly/htt-about-me</a>
+                    </div>
+                    <div class="item">
+                        <div class="name-block">My demo Angular2+</div>
+                        <a class="link" href="http://bit.ly/htt-demo">bit.ly/htt-demo</a>
+                    </div>
+                </aside>
+                <!-- End Link Ref -->
             </div>
         </div>
     </ng-container>

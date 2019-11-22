@@ -28,6 +28,8 @@ import { AppComponent } from "./app.component";
 
 // About me
 import { IntroduceComponent } from "./admin/components/introduce/introduce.component";
+import { ParticlesModule } from "angular-particle";
+
 
 // User
 import { NavComponent } from "./client/component/nav/nav-component.component";
@@ -130,6 +132,9 @@ import { MessagesControlComponent } from "./services/validator/components/messag
         ReactiveFormsModule,
         DragDropModule,
         BrowserAnimationsModule,
+
+        // Practicles
+        ParticlesModule,
 
         // Apollo Module
         HttpClientModule,
