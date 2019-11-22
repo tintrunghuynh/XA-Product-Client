@@ -15,6 +15,13 @@
     }
     .row2 {
         height: 1155px;
+        background-image: linear-gradient(
+            90deg,
+            rgba(200, 32, 32, 0.1) 15%,
+            rgba(77, 166, 255, 0.5),
+            rgba(77, 166, 255, 0.5)
+        ) !important;
+        background-color: rgba(0, 0, 0, 0) !important;
     }
     #panel {
         > h1 {
@@ -239,7 +246,11 @@ div[chckLoc="Intro"] {
     @media screen and (min-width: 200rem) {
         // width: 1200px;
     }
-
+    .row {
+        // Replace row class of bootstrap
+        margin-left: 0;
+        margin-right: 0;
+    }
     .row1 {
         @include background-row1();
         border: 0;
@@ -259,15 +270,14 @@ div[chckLoc="Intro"] {
         display: flex;
         flex-direction: column;
         .name {
-            margin: 1rem 0 0 0;
-            height: 60%;
+            margin: 1rem 0 1rem 0;
             display: flex;
             flex-direction: column;
             > h1 {
                 margin: auto;
                 color: rgb(147, 62, 151);
                 font-family: "Pacifico", cursive;
-                font-size: 5em;
+                font-size: 4em;
                 font-weight: 1000;
                 letter-spacing: 0.15em;
                 filter: drop-shadow(
@@ -281,31 +291,32 @@ div[chckLoc="Intro"] {
                 }
             }
         }
-        .contact-info {
-            align-items: center;
-            display: flex;
-            justify-content: flex-start;
-            color: rgb(232, 232, 232);
-            background-color: $main-purple;
-            border: none;
-            border-top: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-            overflow: hidden;
-            margin: 0.2em 0 0.2em 0;
-            $icon-font-size: 1em;
-            &:first-child {
-                margin-top: 1em;
-            }
 
-            .icon {
-                margin: 0em 0.5em 0em 0.5em;
-                font-size: calc(#{$icon-font-size} * 1.2);
-                height: $icon-font-size;
-                width: $icon-font-size;
-            }
-            .private-info {
-                margin: calc(0.2em + #{$icon-font-size} / 3) 0;
-                font-weight: 600;
+        .row {
+            .contact-info {
+                align-items: center;
+                display: flex;
+                justify-content: flex-start;
+                color: rgb(232, 232, 232);
+                background-color: $main-purple;
+                border: none;
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                overflow: hidden;
+                margin: 0.2em 0 0.2em 0;
+                $icon-font-size: 1em;
+
+                .icon {
+                    margin: 0em 0.5em 0em 0.2em;
+                    color: #fff;
+                    font-size: calc(#{$icon-font-size} * 1.2);
+                    height: $icon-font-size;
+                    width: $icon-font-size;
+                }
+                .private-info {
+                    margin: calc(0.2em + #{$icon-font-size} / 3) 0;
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -317,13 +328,13 @@ div[chckLoc="Intro"] {
         border: 0;
         // margin-top: 5rem;
         // margin-bottom: 5rem;
-        background: rgba(8, 247, 255, 0.2);
+        background: #25575933;
         background-blend-mode: overlay;
         position: relative;
         $panel-before-left: 3em;
         $panel-before-width: 1em;
-        $panel-shadow-width: 2em;
-        $stripe-lines-color: #01cfbc;
+        $panel-shadow-width: 1.5em;
+        $stripe-lines-color: #fff;
         $bar-height: 5rem;
         &:before {
             content: "";
@@ -337,42 +348,7 @@ div[chckLoc="Intro"] {
                 $panel-shadow-width 0 0 $stripe-lines-color
             ); // Using filter instead box-shadow for printer
             background: $stripe-lines-color;
-            mix-blend-mode: overlay;
-            animation-name: fade-in;
-            animation-duration: 10s;
-            animation-iteration-count: 1;
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
         }
-
-        &:after {
-            content: "";
-            position: absolute;
-            bottom: 5em;
-            left: 0;
-            width: 100%;
-            height: 1em;
-            background: $stripe-lines-color;
-            mix-blend-mode: overlay;
-            animation-name: moving-around;
-            animation-duration: 10s;
-            animation-iteration-count: 1;
-            @keyframes moving-around {
-                0% {
-                    bottom: calc(100% - #{$bar-height} - 1em);
-                }
-                100% {
-                    bottom: 5em;
-                }
-            }
-        }
-
         .panel-bar {
             height: $bar-height;
             width: 100%;
@@ -401,8 +377,9 @@ div[chckLoc="Intro"] {
         }
 
         .about-career {
+            margin: auto;
             > h1 {
-                margin: 1em 0 0.2em 0.5em;
+                margin: auto 0 1rem 0.5em;
                 font-weight: 1000;
                 font-size: 2.5em;
                 animation-name: change-color;
@@ -436,20 +413,29 @@ div[chckLoc="Intro"] {
                 }
             }
             p.career-objective {
-                margin: 0 2em 2em 6em;
-                justify-content: stretch;
+                margin: auto 1em auto 6em;
+                padding: 0.5rem 1rem;
+                border: 2px solid #fff;
                 font-size: 2rem;
-                font-weight: 600;
                 text-align: justify;
-                text-shadow: 0.15rem 0.15rem 1rem #000;
-                filter: drop-shadow(0.5px 0.5px 2px #2a6162);
+                text-shadow: 0.1em 0.1em 0.2rem #000;
+                filter: drop-shadow(0.1em 0.1em 0.2rem #000);
+                strong {
+                    color: #ff7043;
+                }
             }
         }
     }
 
     .row2 {
         display: flex;
-        background-color: rgba(92, 107, 109, 0.4);
+        background-image: linear-gradient(
+            90deg,
+            rgba(200, 32, 32, 0.1) 25%,
+            rgba(77, 166, 255, 0.5),
+            rgba(77, 166, 255, 0.5)
+        );
+        background-color: rgba(95, 100, 106, 0.15);
         font-size: 2rem;
         position: relative;
         min-height: 110rem;
@@ -541,8 +527,32 @@ div[chckLoc="Intro"] {
             width: calc(
                 100% - #{$col1-width} + #{$double-border-white-width} * 2 / 3
             );
-            .experience {
-                margin: 1rem;
+            .row {
+                .info {
+                    $info-border-color: #fff;
+                    section {
+                        height: 100%;
+                    }
+                    ul {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                    h1 {
+                        text-decoration: underline;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    article {
+                        &:nth-child(even) {
+                            border-right: 2px solid $info-border-color;
+                            border-top: 2px solid $info-border-color;
+                        }
+                        &:nth-child(odd) {
+                            border-left: 2px solid $info-border-color;
+                            border-bottom: 2px solid $info-border-color;
+                        }
+                    }
+                }
             }
             .additional-skills {
                 min-width: 100%;
@@ -619,12 +629,13 @@ div[chckLoc="Intro"] {
                         }
                         position: relative;
                         filter: drop-shadow(0 0 2rem #000);
-                        $translate-width: 0.5px;
+                        $translate-width: 0.6px;
                         .tritangle-building {
                             &.layer-background {
-                                fill: #b0b7b8;
-                                stroke: #b0b7b8;
-                                // stroke-width: 0.5px;
+                                fill: transparent;
+                                stroke: #ff90f240;
+
+                                stroke-width: 2.5px;
                             }
                             &.layer-front-end {
                                 transform: translate(-$translate-width, 0px);
@@ -652,14 +663,14 @@ div[chckLoc="Intro"] {
                             &.layer-knowledge {
                                 transform: translate(
                                     0px,
-                                    calc(3 / 2 * #{$translate-width})
+                                    calc(2 * #{$translate-width} * 5 / 6)
                                 );
                                 fill: #6c757d;
                                 // stroke: transparent;
                                 &-stroke {
                                     transform: translate(
                                         0px,
-                                        calc(3 / 2 * #{$translate-width})
+                                        calc(2 * #{$translate-width} * 5 / 6)
                                     );
                                     fill: transparent;
                                     stroke: #b0b7b8;
@@ -848,13 +859,14 @@ div[chckLoc="Intro"] {
                     flex-direction: row;
                     .name-block {
                         margin: 0.5rem;
-                        width: 20rem;
-                        color: #4b4bb2;
+                        width: 25rem;
+                        color: #13134f;
                         font-weight: bold;
                     }
                     .link {
                         margin: 0.5rem;
-                        color: #db3544;
+                        color: #960000fc;
+                        font-weight: bold;
                     }
                 }
             }

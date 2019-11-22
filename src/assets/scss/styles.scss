@@ -109,7 +109,7 @@ body {
                 margin-right: 1rem !important;
             }
         }
-        &-auto{
+        &-auto {
             margin: auto;
         }
     }
@@ -123,18 +123,18 @@ body {
         &.jc-fe {
             justify-content: flex-end;
         }
-        &-col{
+        &-col {
             display: flex;
             flex-direction: column;
-            &-rev{
+            &-rev {
                 display: flex;
                 flex-direction: column-reverse;
             }
         }
-        &-row{
+        &-row {
             display: flex;
             flex-direction: row;
-            &-rev{
+            &-rev {
                 display: flex;
                 flex-direction: row-reverse;
             }
@@ -216,7 +216,7 @@ body {
             color: #000 !important;
         }
     }
-    .center{
+    .center {
         text-align: center;
     }
     .btn-hover-animate {
@@ -270,6 +270,87 @@ body {
             // i{
             //     color: black;
             // }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            box-shadow: none;
+            color: $main-color;
+            filter: brightness(0.9);
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 1);
+            width: 100px;
+            left: 0;
+            top: 0;
+            filter: blur(30px);
+            transform: translateX(-130px) skewX(-15deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50px;
+            left: 30px;
+            top: 0;
+            filter: blur(30px);
+            transform: translate(-100px) scaleX(-15deg);
+        }
+
+        &:hover:before {
+            transform: translateX(300px) skewX(-15deg);
+            transition: 1.5s;
+        }
+
+        &:hover:after {
+            transform: translateX(300px) skewX(-15deg);
+            transition: 1.5s;
+        }
+    }
+
+    .a-tag-hover-animate {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            filter: blur(30px);
+            transform: translateX(-130px) skewX(-15deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 120;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            filter: blur(30px);
+            transform: translate(-130px) scalex(-15deg);
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            background: #ffffff47;
         }
 
         &:focus {
