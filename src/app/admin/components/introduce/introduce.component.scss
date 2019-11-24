@@ -13,16 +13,45 @@
             display: none;
         }
     }
+    particles{
+        display: none;
+    }
+    .row1 {
+        background-image: unset !important;
+    }
     .row2 {
         height: 1155px;
-        background-image: linear-gradient(
-            90deg,
-            rgba(200, 32, 32, 0.1) 15%,
-            rgba(77, 166, 255, 0.5),
-            rgba(77, 166, 255, 0.5)
-        ) !important;
+        background-image: unset !important;
         background-color: rgba(0, 0, 0, 0) !important;
+        &:after {
+            background: lightgray !important;
+            opacity: 1 !important;
+        }
     }
+    .layer {
+        &-background {
+            fill: transparent !important;
+        }
+        &-back-end {
+            fill: transparent !important;
+        }
+        &-front-end {
+            fill: transparent !important;
+        }
+         &-knowledge {
+            fill: transparent !important;
+        }
+    }
+    // .row2 {
+    //     height: 1155px;
+    //     background-image: linear-gradient(
+    //         90deg,
+    //         rgba(200, 32, 32, 0.1) 15%,
+    //         rgba(77, 166, 255, 0.5),
+    //         rgba(77, 166, 255, 0.5)
+    //     ) !important;
+    //     background-color: rgba(0, 0, 0, 0) !important;
+    // }
     #panel {
         h1 {
             animation: none !important;
@@ -538,7 +567,7 @@ div[chckLoc="Intro"] {
             width: calc(
                 100% - #{$col1-width} + #{$double-border-white-width} * 2 / 3
             );
-            section.row{
+            section.row {
                 margin-bottom: 2em;
             }
             .row {
