@@ -12,7 +12,7 @@ export class IntroduceComponent implements OnInit, DoCheck {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
-        this.loadingBackgroundRow1();
+        // this.loadingBackgroundRow1();
         this.addHover();
         // this.setA4Side();
         this.style = {
@@ -158,11 +158,11 @@ export class IntroduceComponent implements OnInit, DoCheck {
         // console.log(`current height: ${$("body").css("height")}`);
         // $("body").css("height", `calc(${width} / 8.5 * 11)`);
     }
-    loadingBackgroundRow1() {
-        const bgArray = ["keyboard.jpg", "7_edited.jpg"];
-        const bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-        $("#row1").css("background-image", `url("/assets/Imgs/${bg}")`);
-    }
+    // loadingBackgroundRow1() {
+    //     const bgArray = ["keyboard.jpg", "7_edited.jpg"];
+    //     const bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+    //     $("#row1").css("background-image", `url("/assets/Imgs/${bg}")`);
+    // }
     addHover() {
         console.log("hover");
         let ref;
