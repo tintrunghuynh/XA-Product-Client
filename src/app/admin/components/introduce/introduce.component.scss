@@ -351,6 +351,7 @@ div[chckLoc="Intro"] {
         }
         .panel-bar {
             height: $bar-height;
+            $bar-color: #fff;
             width: 100%;
             &:first-child {
                 &:before {
@@ -648,6 +649,9 @@ div[chckLoc="Intro"] {
                                     );
                                     fill: transparent;
                                     stroke: #b0b7b8;
+                                    &:hover {
+                                        transform: scale(1.3);
+                                    }
                                 }
                             }
                             &.layer-back-end {
