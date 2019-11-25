@@ -1,8 +1,8 @@
 //import
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Titillium Web");
-// @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese");
-@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese");
+// @import url("https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400i,700,700i,900,900i&display=swap&subset=cyrillic,latin-ext,vietnamese");
 @import "user/variables.scss";
 @import "user/btn.scss";
 @import "user/main.scss";
@@ -22,10 +22,13 @@ html {
     font-size: 10px;
 }
 body {
-    min-width: 900px;
-    font: 1.5rem/1.5 "Muli Light Bold Italic", sans-serif;
+    $min-width-var: 900px;
+    $max-width-var: 1920px;
+    // min-width: $min-width-var;
+    max-width: $max-width-var;
+    font: 1.5rem/1.5 "Muli Light Bold Italic", sans-serif !important;
     padding: 0;
-    margin: 0;
+    margin: auto !important;
     position: relative;
     // &:before {
     //     content: "";
@@ -106,6 +109,9 @@ body {
                 margin-right: 1rem !important;
             }
         }
+        &-auto {
+            margin: auto;
+        }
     }
 
     .flex {
@@ -116,6 +122,22 @@ body {
 
         &.jc-fe {
             justify-content: flex-end;
+        }
+        &-col {
+            display: flex;
+            flex-direction: column;
+            &-rev {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        &-row {
+            display: flex;
+            flex-direction: row;
+            &-rev {
+                display: flex;
+                flex-direction: row-reverse;
+            }
         }
     }
 
@@ -194,7 +216,9 @@ body {
             color: #000 !important;
         }
     }
-
+    .center {
+        text-align: center;
+    }
     .btn-hover-animate {
         display: inline-flex;
         justify-content: center;
@@ -208,7 +232,7 @@ body {
         border: 0.05rem rgba(#d699ff, 0.5) solid;
         box-sizing: border-box;
         overflow: hidden;
-        transition: 0.7s;
+        transition: 0.3s;
 
         &:before {
             content: "";
@@ -246,6 +270,87 @@ body {
             // i{
             //     color: black;
             // }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            box-shadow: none;
+            color: $main-color;
+            filter: brightness(0.9);
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 1);
+            width: 100px;
+            left: 0;
+            top: 0;
+            filter: blur(30px);
+            transform: translateX(-130px) skewX(-15deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50px;
+            left: 30px;
+            top: 0;
+            filter: blur(30px);
+            transform: translate(-100px) scaleX(-15deg);
+        }
+
+        &:hover:before {
+            transform: translateX(300px) skewX(-15deg);
+            transition: 1.5s;
+        }
+
+        &:hover:after {
+            transform: translateX(300px) skewX(-15deg);
+            transition: 1.5s;
+        }
+    }
+
+    .a-tag-hover-animate {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            filter: blur(30px);
+            transform: translateX(-130px) skewX(-15deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 120;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            filter: blur(30px);
+            transform: translate(-130px) scalex(-15deg);
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            background: #ffffff47;
         }
 
         &:focus {
