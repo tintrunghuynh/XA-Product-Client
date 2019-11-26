@@ -1,18 +1,15 @@
+$app-name: "/XA-Product-Client";
 @media print {
     *,
     *:before,
     *:after {
-        text-shadow: unset !important;
-        box-shadow: unset !important;
-    }
-    p,
-    li {
-        font-size: 0.8em;
-        margin-bottom: 0.3rem;
+        // text-shadow: unset !important;
+        // box-shadow: unset !important;
+        filter: none !important;
     }
     $double-border-white-width: 1.5rem;
     $border-double-white: $double-border-white-width double rgb(230, 230, 230);
-    $border-solid-white: calc(#{$double-border-white-width}/ 3) solid #e6e6e6; // divided for 3 because border double style has 3 parts: solid/space/solid
+    $border-solid: calc(#{$double-border-white-width}/ 3) solid #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
     $main-purple: rgba(49, 34, 76, 0.9);
     $col1-width: 40%;
     $milestones-width: 35%;
@@ -25,37 +22,6 @@
         text-decoration: none;
         color: #4e0276e0;
     }
-
-    @media screen and (max-width: 720px) {
-        p,
-        li {
-            font-size: 0.8em;
-            margin-bottom: 0.3rem;
-        }
-        .contact-info {
-            font-size: 2rem !important;
-        }
-    }
-    @media screen and (min-width: 721px) and (max-width: 1080px) {
-        p,
-        li {
-            font-size: 1em;
-            margin-bottom: 0.4rem;
-        }
-        .contact-info {
-            font-size: 2.2rem !important;
-        }
-    }
-    @media screen and (min-width: 1081px) and (max-width: 1920px) {
-        p,
-        li {
-            font-size: 1em;
-            margin-bottom: 0.4rem;
-        }
-        .contact-info {
-            font-size: 2.2rem !important;
-        }
-    }
     @mixin milestones {
         .milestones {
             display: flex;
@@ -63,28 +29,18 @@
             flex-direction: column-reverse;
             position: relative;
             border: 0;
-            border-right: $milestones-border-right-width solid #544175;
+            border-right: $milestones-border-right-width solid #30414c;
             $font-size-after: 2em;
             &:after {
                 position: absolute;
                 right: 0.4em;
-                color: rgba(#33334d, 0.9);
+                color: #30414c;
                 font-weight: 1000;
                 font-size: $font-size-after;
-                box-shadow: 0em 0em 0.05em #72648ba2;
-                filter: drop-shadow(0em 0em 0.05em #72648ba2);
+                // box-shadow: 0em 0em 0.05em #72648ba2;
                 background: #b3babb;
                 padding: 0 0.15em;
                 // border: 1px solid #673ab7;
-            }
-            &:before {
-                position: absolute;
-                content: "";
-                top: 0;
-                right: -$milestones-border-right-width;
-                width: $milestones-border-right-width;
-                height: 101%;
-                background-color: #544175;
             }
             &:not(.first-year):after {
                 bottom: calc(#{$font-size-after}* -0.45);
@@ -104,15 +60,14 @@
                     &:after {
                         content: "";
                         position: absolute;
-                        top: 0.67em;
+                        top: 8px;
                         // right: calc(#{-$milestones-border-right-width} * 2 * 2 / 3);
                         left: calc(
                             100% - #{$milestones-border-right-width} * 2 * 1 / 4
                         );
                         height: 0.3em;
                         width: calc(#{$milestones-border-right-width} * 2);
-                        background: #544175;
-                        mix-blend-mode: saturation;
+                        background: #30414c;
                     }
                 }
             }
@@ -134,7 +89,6 @@
             &:not(.last-info):after {
                 content: "";
                 // box-shadow: -0 -0.5 rgba(51, 51, 77, 0.9);
-                filter: drop-shadow(0 0 0);
                 background-color: rgba(51, 51, 77, 0.9);
                 position: absolute;
                 top: 0;
@@ -144,8 +98,7 @@
             }
             > div.Month {
                 overflow: hidden;
-                p.info-content,
-                div.list-technologies {
+                p.info-content {
                     margin-left: 1rem;
                     img {
                         margin: 0.5rem 0.5rem 0.5rem 0;
@@ -156,11 +109,8 @@
                     }
                 }
                 .task-item {
-                    .technologies {
-                        img {
-                            flex-wrap: nowrap;
-                            margin-left: 0;
-                        }
+                    .list-technologies {
+                        display: none;
                     }
                 }
             }
@@ -168,9 +118,12 @@
     }
 
     div[chckLoc="Intro"] {
-        margin: 1.5rem 1rem;
-        min-width: 110rem;
-        box-shadow: 0 0 10rem;
+        margin: auto;
+        // A4 side 150ppi
+        width: 1240px;
+        height: 1754px;
+
+        // box-shadow: 0 0 10rem;
         overflow: hidden;
         position: relative;
         @media screen and (min-width: 200rem) {
@@ -187,15 +140,14 @@
             border: 0;
             border-bottom: 1rem solid #fff;
             display: flex;
-            // height: $row1-height;
+            font-size: 1rem;
             position: relative;
             #contact {
                 min-width: $col1-width;
                 text-align: center;
                 border: 0;
                 border-right: $border-double-white;
-                // background: rgba(224, 129, 227, 0.2);
-                background: rgba(50, 31, 43, 0.15);
+                background: rgb(48, 65, 76);
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -207,12 +159,12 @@
                         margin: auto;
                         color: #ff4347;
                         font-family: "Pacifico", cursive;
-                        font-size: 4em;
+                        font-size: 7em;
                         font-weight: 1000;
                         letter-spacing: 0.15em;
                         filter: drop-shadow(
                             0.06em 0.06em 0 #ff4347
-                        ); // Using filter instead box-shadow for printer
+                        ) !important; // Using filter instead box-shadow for printer
                         -webkit-text-stroke: 0.03em #fff;
                         text-shadow: 0 0 3em #512da8;
                         text-transform: capitalize;
@@ -233,18 +185,20 @@
                         border-top: 1px solid #fff;
                         border-bottom: 1px solid #fff;
                         overflow: hidden;
-                        margin: 0.2em 0 0.2em 0;
-                        $icon-font-size: 1em;
+                        margin: 0.5em 0 0.5em 0;
+                        $info-font-size: 2em;
 
                         .icon {
                             margin: 0em 0.5em 0em 0.2em;
                             color: #fff;
-                            font-size: calc(#{$icon-font-size} * 1.2);
-                            height: $icon-font-size;
-                            width: $icon-font-size;
+                            font-size: calc(#{$info-font-size} * 1.2);
+                            line-height: 1.5 !important;
+                            height: $info-font-size;
+                            width: $info-font-size;
                         }
                         .private-info {
-                            margin: calc(0.2em + #{$icon-font-size} / 3) 0;
+                            font-size: $info-font-size;
+                            margin: 1em 0;
                             font-weight: 600;
                         }
                     }
@@ -262,20 +216,7 @@
                 $panel-before-width: 1em;
                 $panel-shadow-width: 1.5em;
                 $stripe-lines-color: #e6e6e6;
-                $bar-height: 3em;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    left: $panel-before-left;
-                    top: $bar-height;
-                    height: calc(100% - 2 * #{$bar-height});
-                    width: $panel-before-width;
-                    // box-shadow: 2em 0 #fff; // Using filter instead for printer
-                    filter: drop-shadow(
-                        $panel-shadow-width 0 0 $stripe-lines-color
-                    ); // Using filter instead box-shadow for printer
-                    background: $stripe-lines-color;
-                }
+                $bar-height: 2em;
                 .panel-bar {
                     height: $bar-height;
                     $bar-color: #fff;
@@ -307,26 +248,26 @@
                 .about-career {
                     margin: auto;
                     > h1 {
-                        margin: auto 0 1rem 0.5em;
+                        margin: 2rem 0 2rem 0.5em;
                         font-weight: bolder;
-                        font-size: 4em;
-                        filter: drop-shadow(0 0.03rem 0 #ff5353);
+                        font-size: 5em;
                         -webkit-text-stroke: 0.02em #ff5353;
                         color: #fff !important;
                         text-shadow: 0.03em 0.04em 0.05rem #ff7777 !important;
                     }
                     p.who-am-i {
-                        margin: 1em 1em 1em 6.5em;
+                        margin: 0em 1em 1em 3em;
                         padding: 0.5rem 1em 1em 0;
                         color: #d8c9e2;
                         font-size: 2rem;
                         text-align: justify;
-                        filter: drop-shadow(0.1em 0.1em 0.2rem #000);
                         padding: 1em;
-                        box-shadow: 0 0 1em #fff !important;
+                        border: 1px solid #fff;
+                        // box-shadow: 0 0 1em #fff !important;
                         strong {
                             color: #f44336;
                             font-weight: bolder;
+                            white-space: nowrap;
                             background: #fff;
                             border-radius: 12px;
                             padding: 0 10px;
@@ -338,31 +279,11 @@
         }
 
         .row2 {
-            height: 1155px;
-            &:after {
-                background: lightgray !important;
-                opacity: 1 !important;
-            }
             display: flex;
             font-size: 2rem;
             position: relative;
-            min-height: 110rem;
-            &:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url(~/assets/Imgs/AndICallItBoke.jpg) no-repeat;
-                background-color: rgba(#333, 0.4);
-                background-position: 0% 45%;
-                background-size: cover;
-                background-blend-mode: luminosity;
-                opacity: 0.1;
-                z-index: -1;
-                filter: blur(5px) grayscale(1);
-            }
+            height: 850px;
+            background-color: #cfd8dc;
             #milestones-area {
                 width: calc(
                     #{$col1-width} - #{$double-border-white-width} / 3
@@ -371,13 +292,8 @@
                 flex-direction: column-reverse;
                 justify-content: space-between;
                 border: 0;
-                border-right: $border-solid-white;
+                border-right: $border-solid;
                 [year] {
-                    &:hover {
-                        > .milestones:after {
-                            transform: scale(1.2);
-                        }
-                    }
                     width: 100%;
                     position: relative;
                     font-size: 1em;
@@ -386,21 +302,21 @@
                     @include milestones();
                     @include info();
                     &.y2017 {
-                        height: 60%;
+                        height: 70%;
                         .milestones {
                             &:after {
                                 content: "2017";
                             }
                         }
                         .July {
-                            height: 70%;
+                            height: 60%;
                         }
                         .September {
-                            height: 20%;
+                            height: 25%;
                         }
                     }
                     &.y2018 {
-                        height: 30%;
+                        height: 20%;
                         .milestones {
                             &:after {
                                 content: "2018";
@@ -408,10 +324,10 @@
                         }
 
                         .May {
-                            height: 30%;
+                            height: 40%;
                         }
                         .June {
-                            height: 55%;
+                            height: 35%;
                         }
                     }
                     &.y2019 {
@@ -427,8 +343,10 @@
                     }
                 }
             }
-
-            #why-me {
+            #why-me[data-print="false"] {
+                display: none;
+            }
+            #why-me[data-print="true"] {
                 display: flex;
                 flex-direction: column;
                 font-size: 1em;
@@ -438,7 +356,8 @@
                 }
                 .row {
                     .info {
-                        $info-border-color: #fff;
+                        $info-border-color: #30414c;
+                        margin: 2rem 1rem;
                         section {
                             height: 100%;
                         }
@@ -448,359 +367,22 @@
                         }
                         h1 {
                             text-decoration: underline;
+                            margin-left: 1em;
                             margin-bottom: 0.5rem;
+                            font-weight: bolder;
                         }
-
                         article {
-                            &:nth-child(even) {
-                                border-right: 2px solid $info-border-color;
-                                border-top: 2px solid $info-border-color;
-                            }
-                            &:nth-child(odd) {
-                                border-left: 2px solid $info-border-color;
-                                border-bottom: 2px solid $info-border-color;
-                            }
-                        }
-                    }
-                }
-
-                .link-ref {
-                    .item {
-                        margin: 0.5rem;
-                        display: flex;
-                        flex-direction: row;
-                        position: relative;
-                        &:last-child {
-                            margin-bottom: 2em;
-                        }
-
-                        .name-block {
-                            margin: 0.5rem 0;
-                            width: 25rem;
-                            font-weight: bold;
-                            text-align: right;
-                        }
-                        .link {
-                            margin: 0.5rem;
-                            color: rgba(51, 51, 77, 0.8);
-                            font-weight: bold;
-                        }
-                    }
-                }
-
-                .additional-skills {
-                    display: none;
-                    min-width: 100%;
-                    margin: auto 1rem;
-                    position: relative;
-                    // &:not(:first-child) {
-                    //     border-bottom: 0.2em solid $main-purple;
-                    // }
-                    article {
-                        font-size: 1em;
-                        h1 {
-                            font-size: 1.5em;
-                        }
-                    }
-                    .annotation {
-                        margin: 1rem;
-                        position: absolute;
-                        width: 23rem;
-                        height: 12rem;
-                        display: flex;
-                        flex-direction: column;
-                        font-size: 0.75em;
-                        color: #33334d;
-                        div.item {
-                            z-index: 1;
-                            display: flex;
-                            flex-direction: row;
-                            margin: 0.2rem 1rem 0.2rem 0;
-                            height: 33.33%;
-                            cursor: pointer;
-                            $color-block-border-width: 1px;
-                            &:hover {
-                                -webkit-text-stroke: 1px;
-                                margin-left: 1rem;
-                                transition: 0.5s !important;
-                                .color-block {
-                                    border: calc(
-                                            #{$color-block-border-width} * 2
-                                        )
-                                        solid #fff;
-                                }
-                            }
-                            .color-block {
-                                width: 3rem;
-                                height: 100%;
-                                border: $color-block-border-width solid #fff;
-                                margin: 0 0.2rem;
-                                &.front-end {
-                                    background: #33334d;
-                                }
-                                &.back-end {
-                                    background: #dc3545;
-                                }
-                                &.knowledge-technologies {
-                                    background: #6c757d;
-                                }
-                            }
-                        }
-                        p {
-                            margin: auto 0 auto 1rem;
-                        }
-                    }
-                    #shape-container {
-                        max-width: 80rem;
-                        margin: auto auto auto auto;
-                        text-align: center;
-                        position: relative;
-                        user-select: none;
-                        particles {
-                            display: none;
-                        }
-                        svg {
-                            &.border-stroke {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                pointer-events: none;
-                            }
-                            position: relative;
-                            filter: drop-shadow(0 0 2rem #000);
-                            $translate-width: 0.6px;
-                            .tritangle-building {
-                                &.layer-background {
-                                    fill: transparent;
-                                    stroke: #ff90f240;
-
-                                    stroke-width: 2.5px;
-                                }
-                                &.layer-front-end {
-                                    transform: translate(
-                                        -$translate-width,
-                                        0px
-                                    );
-                                    fill: #4b4bb2;
-                                    // stroke: transparent;
-                                    &-stroke {
-                                        transform: translate(
-                                            -$translate-width,
-                                            0px
-                                        );
-                                        fill: transparent;
-                                        stroke: #b0b7b8;
-                                        &:hover {
-                                            transform: scale(1.3);
-                                        }
-                                    }
-                                }
-                                &.layer-back-end {
-                                    transform: translate($translate-width, 0px);
-                                    fill: #dc3545;
-                                    // stroke: transparent;
-                                    &-stroke {
-                                        transform: translate(
-                                            $translate-width,
-                                            0px
-                                        );
-                                        fill: transparent;
-                                        stroke: #b0b7b8;
-                                    }
-                                }
-                                &.layer-knowledge {
-                                    transform: translate(
-                                        0px,
-                                        calc(2 * #{$translate-width} * 5 / 6)
-                                    );
-                                    fill: #6c757d;
-                                    // stroke: transparent;
-                                    &-stroke {
-                                        transform: translate(
-                                            0px,
-                                            calc(
-                                                2 * #{$translate-width} * 5 / 6
-                                            )
-                                        );
-                                        fill: transparent;
-                                        stroke: #b0b7b8;
-                                    }
-                                }
-                            }
-                            .fill-white {
-                                stroke: #fff !important;
-                            }
-                        }
-                        .custom-shape {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 100%;
-                            width: 100%;
-                        }
-                        @mixin bigger-hover($scale) {
-                            transform: scale($scale);
-                            background-color: #fff !important;
-                            box-shadow: 0 0 3rem #2c37d1 !important;
-                            z-index: 1;
-                        }
-
-                        .img-block {
-                            margin: 0;
-                            img {
-                                margin: 0;
-                                width: 100%;
-                                position: absolute;
-                                border-radius: 50%;
-                                box-shadow: 0 0 1rem #fff;
-                                border: 2px solid #fff;
-                                &:hover {
-                                    @include bigger-hover(2);
-                                }
-                            }
-                            .img-outer {
-                                position: absolute;
-                                .icon-skill {
-                                    background-color: #d1d5d7;
-                                }
-                            }
-                        }
-
-                        .layer-front-end {
-                            div.javascript {
-                                top: 61%;
-                                left: 26%;
-                                width: 8%;
-                            }
-                            div.html5 {
-                                top: 68%;
-                                left: 17%;
-                                width: 7%;
-                            }
-                            div.angular {
-                                top: 21%;
-                                left: 38%;
-                                width: 7%;
-                                // &:before {
-                                //     position: absolute;
-                                //     content: "4M+";
-                                //     left: 10px;
-                                //     height: 30px;
-                                //     width: 30px;
-                                //     background: #fff;
-                                //     z-index: 2;
-                                //     opacity: 1;
-                                //     border-radius: 50%;
-                                // }
-                            }
-                            div.typescript {
-                                top: 31%;
-                                left: 39%;
-                                width: 6.5%;
-                            }
-                            div.about-css {
-                                top: 41%;
-                                left: 29%;
-                                width: 18%;
-                                height: calc(
-                                    100% / 95 * 110 * 18 / 100
-                                ); // viewBox="a b c d", recipe = 100% / d * c * width-variable(18%)
-                                border: 2px solid #fff;
-                                border-radius: 50%;
-                                box-shadow: 0 0 1rem #fff;
-                                background-color: transparent;
-                                transition: 0.5s !important;
-                                &:hover {
-                                    @include bigger-hover(1.3);
-                                }
-                                .part {
-                                    position: relative;
-                                    border: none;
-                                    margin: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    // height: 0; // Equal with width (convert to px after calc). ResSet in .ts
-                                    // border-radius: 50%;
-                                    // border: 2px solid #fff;
-                                    // background-color: transparent;
-                                    img {
-                                        margin: 0;
-                                        &.icon-css {
-                                            width: 47%;
-                                            top: 0%;
-                                            left: 27%;
-                                        }
-                                        &.icon-bootstrap {
-                                            width: 47%;
-                                            top: 39%;
-                                            left: 3%;
-                                        }
-                                        &.icon-sass {
-                                            width: 47%;
-                                            top: 39%;
-                                            left: 50%;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        .layer-back-end {
-                            div.nodejs {
-                                top: 40%;
-                                left: 53%;
-                                width: 8%;
-                            }
-
-                            div.graphql {
-                                top: 52%;
-                                left: 51%;
-                                width: 7.2%;
-                            }
-
-                            div.mongodb {
-                                top: 58%;
-                                left: 64%;
-                                width: 7%;
-                            }
-                            div.restapi {
-                                top: 30%;
-                                left: 51%;
-                                width: 7%;
-                            }
-                        }
-
-                        .layer-knowledge {
-                            div.windows {
-                                top: 76%;
-                                left: 51%;
-                                width: 8%;
-                            }
-
-                            div.linux {
-                                top: 73%;
-                                left: 38%;
-                                width: 7%;
-                            }
-                            div.git {
-                                top: 85%;
-                                left: 43%;
-                                width: 6%;
-                            }
-                            div.heroku {
-                                top: 81%;
-                                left: 63%;
-                                width: 6%;
-                            }
-                            div.java {
-                                top: 81%;
-                                left: 31%;
-                                width: 7%;
-                            }
+                            border-left: 2px solid $info-border-color;
+                            // border-bottom: 2px solid $info-border-color;
                         }
                     }
                 }
             }
+        }
+        .personal{
+            height: 350px;
+            background-color: #0e4b66;
+            border-top: 1rem solid #fff;
         }
     }
 }
@@ -823,7 +405,7 @@
 //     // Variable
 //     $double-border-white-width: 1.5rem;
 //     $border-double-white: $double-border-white-width double rgb(230, 230, 230);
-//     $border-solid-white: calc(#{$double-border-white-width}/ 3) solid #e6e6e6; // divided for 3 because border double style has 3 parts: solid/space/solid
+//     $border-solid: calc(#{$double-border-white-width}/ 3) solid #e6e6e6; // divided for 3 because border double style has 3 parts: solid/space/solid
 //     $main-purple: rgba(49, 34, 76, 0.9);
 //     $col1-width: 40%;
 //     $milestones-width: 35%;
@@ -979,9 +561,9 @@
 //     }
 
 //     @mixin background-row1 {
-//         background: url("/assets/Imgs/7_edited.jpg") no-repeat;
-//         // background: url("/assets/Imgs/keyboard.jpg") no-repeat;
-//         // background: url("http://bit.ly/2qkY6RC") no-repeat;
+//         background: url($app-name+"/assets/Imgs/7_edited.jpg"),
+//             url("/assets/Imgs/7_edited.jpg") no-repeat;
+
 //         background-color: rgba(#333, 0.4);
 //         background-position: 0% 45%;
 //         background-size: cover;
@@ -1055,17 +637,17 @@
 //                     border-bottom: 1px solid #fff;
 //                     overflow: hidden;
 //                     margin: 0.2em 0 0.2em 0;
-//                     $icon-font-size: 1em;
+//                     $info-font-size: 1em;
 
 //                     .icon {
 //                         margin: 0em 0.5em 0em 0.2em;
 //                         color: #fff;
-//                         font-size: calc(#{$icon-font-size} * 1.2);
-//                         height: $icon-font-size;
-//                         width: $icon-font-size;
+//                         font-size: calc(#{$info-font-size} * 1.2);
+//                         height: $info-font-size;
+//                         width: $info-font-size;
 //                     }
 //                     .private-info {
-//                         margin: calc(0.2em + #{$icon-font-size} / 3) 0;
+//                         margin: calc(0.2em + #{$info-font-size} / 3) 0;
 //                         font-weight: 600;
 //                     }
 //                 }
@@ -1077,8 +659,6 @@
 //             display: inline-flex;
 //             flex-direction: column;
 //             border: 0;
-//             // margin-top: 5rem;
-//             // margin-bottom: 5rem;
 //             background: #25575933;
 //             background-blend-mode: overlay;
 //             position: relative;
@@ -1175,6 +755,7 @@
 //                     strong {
 //                         color: #ffed80;
 //                         font-weight: bolder;
+//                         white-space: nowrap;
 //                         background: #2f0d0287;
 //                         border-radius: 12px;
 //                         padding: 0 10px;
@@ -1195,7 +776,6 @@
 //             background-color: rgba(95, 100, 106, 0.15);
 //             font-size: 2rem;
 //             position: relative;
-//             min-height: 110rem;
 //             &:after {
 //                 content: "";
 //                 position: absolute;
@@ -1203,14 +783,15 @@
 //                 left: 0;
 //                 width: 100%;
 //                 height: 100%;
-//                 background: url(~/assets/Imgs/AndICallItBoke.jpg) no-repeat;
+//                 background: url($app-name+"/assets/Imgs/AndICallItBoke.jpg"),
+//                     url("/assets/Imgs/AndICallItBoke.jpg") no-repeat;
 //                 background-color: rgba(#333, 0.4);
 //                 background-position: 0% 45%;
 //                 background-size: cover;
 //                 background-blend-mode: luminosity;
-//                 opacity: 0.1;
+//                 opacity: 0.2;
 //                 z-index: -1;
-//                 filter: blur(5px) grayscale(1);
+//                 filter: blur(5px) grayscale(0);
 //             }
 //             #milestones-area {
 //                 width: calc(
@@ -1220,7 +801,7 @@
 //                 flex-direction: column-reverse;
 //                 justify-content: space-between;
 //                 border: 0;
-//                 border-right: $border-solid-white;
+//                 border-right: $border-solid;
 //                 [year] {
 //                     &:hover {
 //                         > .milestones:after {
@@ -1309,30 +890,6 @@
 //                                 border-left: 2px solid $info-border-color;
 //                                 border-bottom: 2px solid $info-border-color;
 //                             }
-//                         }
-//                     }
-//                 }
-
-//                 .link-ref {
-//                     .item {
-//                         margin: 0.5rem;
-//                         display: flex;
-//                         flex-direction: row;
-//                         position: relative;
-//                         &:last-child {
-//                             margin-bottom: 2em;
-//                         }
-
-//                         .name-block {
-//                             margin: 0.5rem 0;
-//                             width: 25rem;
-//                             font-weight: bold;
-//                             text-align: right;
-//                         }
-//                         .link {
-//                             margin: 0.5rem;
-//                             color: rgba(51, 51, 77, 0.8);
-//                             font-weight: bold;
 //                         }
 //                     }
 //                 }
