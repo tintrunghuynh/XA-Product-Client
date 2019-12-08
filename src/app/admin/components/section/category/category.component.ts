@@ -43,8 +43,8 @@ export class AdmCategoryComponent implements OnInit {
             query: gql`{ getListCategories { _id, name, status, updatedDate, createdDate} }`
         }).subscribe(res => {
             this.resp = res;
-            console.log("resp.data");
-            console.log(this.resp.data);
+            // console.log("resp.data");
+            // console.log(this.resp.data);
             this.data = this.resp.data.categories;
             this.dataSource = new MatTableDataSource(this.resp.data.getListCategories);
             this.dataSource.sort = this.sort;

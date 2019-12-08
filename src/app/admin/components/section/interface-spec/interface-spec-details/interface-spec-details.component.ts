@@ -24,7 +24,7 @@ export class AdmInterfaceSpecDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        console.log("ngOnInit");
+        // console.log("ngOnInit");
         this.services = new AdmInterfaceSpecificationServices(this.apollo, this.router);
         this.getDetails().then(() => {
             this.dataSource = new MatTableDataSource(this.detailsObject.specifications);
@@ -34,8 +34,8 @@ export class AdmInterfaceSpecDetailsComponent implements OnInit, OnDestroy {
     async getDetails() {
         this.isLoadingResults = true;
         await this.services.getDetails(this.route.snapshot.params._id).then((resp: any) => {
-            console.log("got resp");
-            console.log(resp);
+            // console.log("got resp");
+            // console.log(resp);
             if (resp.ok) {
                 this.detailsObject = resp.data;
             }
@@ -48,6 +48,6 @@ export class AdmInterfaceSpecDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        console.log("interface-spec-details ngOnDestroy()");
+        // console.log("interface-spec-details ngOnDestroy()");
     }
 }

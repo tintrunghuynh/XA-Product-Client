@@ -27,15 +27,12 @@ export class IntroduceComponent implements OnInit, DoCheck {
     }
 
     addHover() {
-        console.log("hover");
         let ref;
         $(".annotation>.item").on({
             mouseenter: (e) => {
-                console.log("mouseenter");
                 ref = e.target.getAttribute("ref");
                 $(`polygon[ref="${ref}"]`).addClass("fill-white");
             }, mouseleave: (e) => {
-                console.log("mouseleave");
                 ref = e.target.getAttribute("ref");
                 $(`polygon[ref="${ref}"]`).removeClass("fill-white");
             }
@@ -101,8 +98,8 @@ export class IntroduceComponent implements OnInit, DoCheck {
                 line_linked: {
                     enable: true,
                     distance: 100,
-                    color: "#ffffff",
-                    opacity: 0.5,
+                    color: "#fff",
+                    opacity: 1,
                     width: 1
                 },
                 move: {
@@ -125,7 +122,7 @@ export class IntroduceComponent implements OnInit, DoCheck {
                 events: {
                     onhover: {
                         enable: true,
-                        mode: ["grab", "repulse"],
+                        mode: ["grab"],
                     },
                     onclick: {
                         enable: true,

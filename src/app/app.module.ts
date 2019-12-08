@@ -167,7 +167,7 @@ export class AppModule {
         if (process.env.NODE_ENV === "development") {
             GRAPHQL_BASEURI = "http://127.0.0.1:8080/graphql-retrieve";
         }
-        console.log(`GRAPHQL_BASEURI: ${GRAPHQL_BASEURI}`);
+        // console.log(`GRAPHQL_BASEURI: ${GRAPHQL_BASEURI}`);
         this.apollo.create({
             link: this.httpLink.create({
                 uri: GRAPHQL_BASEURI,

@@ -93,11 +93,11 @@ export class RegisterComponent implements OnInit {
                 id: userId
             }
         }).subscribe(({ data }) => {
-            console.log("Got Data", data);
+            // console.log("Got Data", data);
             this.isLoadingResultsSaD = false;
             this.router.navigate(["/users"]);
         }, (error) => {
-            console.log("There was an error sending the query", error);
+            // console.log("There was an error sending the query", error);
             this.isLoadingResultsSaD = false;
         });
     }

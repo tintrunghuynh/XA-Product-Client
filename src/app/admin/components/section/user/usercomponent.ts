@@ -58,7 +58,7 @@ export class AdmUserComponent implements OnInit {
         }).subscribe(res => {
             this.resp = res;
             this.data = this.resp.data.users;
-            console.log(this.data);
+            // console.log(this.data);
             this.isLoadingResults = false;
         });
 

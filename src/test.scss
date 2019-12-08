@@ -1,0 +1,119 @@
+background-blend-mode: overlay;
+//             background-color: #24253080;
+//             border: 0;
+//             border-bottom: 1rem solid #fff;
+//             display: flex;
+//             font-size: 1rem;
+//             position: relative;
+//             #contact {
+//                 min-width: $col1-width;
+//                 text-align: center;
+//                 border: 0;
+//                 border-right: $border-double-white;
+//                 background: rgb(48, 65, 76);
+//                 position: relative;
+//                 display: flex;
+//                 flex-direction: column;
+//                 .name {
+//                     margin: 1rem 0 1rem 0;
+//                     display: flex;
+//                     flex-direction: column;
+//                     > h1 {
+//                         margin: auto;
+//                         color: #ff4347;
+//                         font-family: "Pacifico", cursive;
+//                         font-size: 7em;
+//                         font-weight: 1000;
+//                         letter-spacing: 0.15em;
+//                         filter: drop-shadow(
+//                             0.06em 0.06em 0 #ff4347
+//                         ) !important; // Using filter instead box-shadow for printer
+//                         -webkit-text-stroke: 0.03em #fff;
+//                         text-shadow: 0 0 3em #512da8;
+//                         text-transform: capitalize;
+//                         &:last-child {
+//                             margin-bottom: 2rem;
+//                         }
+//                     }
+//                 }
+
+//                 .row {
+//                     .contact-info {
+//                         align-items: center;
+//                         display: flex;
+//                         justify-content: flex-start;
+//                         color: rgb(232, 232, 232);
+//                         background-color: #041f2da6;
+//                         border: none;
+//                         border-top: 1px solid #fff;
+//                         border-bottom: 1px solid #fff;
+//                         overflow: hidden;
+//                         margin: 0.1em 0 0.5em 0;
+//                         $info-font-size: 2em;
+
+//                         .icon {
+//                             margin: 0em 0.5em 0em 0.2em;
+//                             color: #fff;
+//                             font-size: calc(#{$info-font-size} * 1.2);
+//                             > svg {
+//                                 height: 100%;
+//                                 width: 1em;
+//                                 line-height: 1.5;
+//                             }
+//                         }
+//                         .private-info {
+//                             font-size: $info-font-size;
+//                             margin: 0.2em 0;
+//                             font-weight: 600;
+//                         }
+//                     }
+//                 }
+//             }
+//             #panel {
+//                 color: #fff;
+//                 min-width: calc(100% - #{$col1-width});
+//                 display: inline-flex;
+//                 flex-direction: column;
+//                 background: #041f2d;
+//                 background-blend-mode: overlay;
+//                 position: relative;
+//                 $panel-before-left: 3em;
+//                 $panel-before-width: 1em;
+//                 $panel-shadow-width: 1.5em;
+//                 $stripe-lines-color: #e6e6e6;
+//                 $bar-height: 2em;
+//                 .panel-bar {
+//                     display: none;
+//                 }
+
+//                 .about-career {
+//                     margin: auto;
+//                     > h1 {
+//                         margin: 2rem 0 2rem 0.5em;
+//                         font-weight: bolder;
+//                         font-size: 6em;
+//                         -webkit-text-stroke: 0.02em #ff5353;
+//                         color: #fff !important;
+//                         text-shadow: 0.03em 0.04em 0.05rem #ff7777 !important;
+//                     }
+//                     p.who-am-i {
+//                         margin: 0em 1em 1em 3em;
+//                         padding: 0.5rem 1em 1em 0;
+//                         color: #c9dde2;
+//                         font-size: 2.5em;
+//                         text-align: justify;
+//                         padding: 1em;
+//                         border: 1px solid #fff;
+//                         // box-shadow: 0 0 1em #fff !important;
+//                         strong {
+//                             color: #f44336;
+//                             font-weight: bolder;
+//                             white-space: nowrap;
+//                             background: #fff;
+//                             border-radius: 12px;
+//                             padding: 2px 10px;
+//                             // text-shadow: 1px 1px 0 #000 !important;
+//                         }
+//                     }
+//                 }
+//             }
