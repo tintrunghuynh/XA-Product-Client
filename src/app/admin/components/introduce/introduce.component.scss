@@ -157,7 +157,6 @@ $app-name: "/XA-Product-Client";
                         margin: 0.5rem 0.5rem 0.5rem 0;
                         width: 4rem;
                         // height: 4rem;
-                        border: 0;
                         border: 0.2rem solid #fff;
                     }
                 }
@@ -166,12 +165,13 @@ $app-name: "/XA-Product-Client";
     }
 
     @mixin row1-background {
+        /* Set in ts and html = rgba(51, 51, 51, 0.4) url("${this.appName}/assets/Imgs/keyboard_rgb.jpg") 0% 45% / cover no-repeat
         background: url($app-name+"/assets/Imgs/keyboard_rgb.jpg"),
             url("/assets/Imgs/keyboard_rgb.jpg") no-repeat;
-
         background-color: rgba(#333, 0.4);
         background-position: 0% 45%;
         background-size: cover;
+        */
         background-blend-mode: overlay;
     }
 
@@ -184,15 +184,16 @@ $app-name: "/XA-Product-Client";
         padding: 2px 10px;
     }
 
-    div[chckLoc="Intro"] {
-        margin: 1.5rem 1rem;
+    .IntroContainer {
         min-width: 110rem;
+    }
+
+    .AboutMe {
+        box-sizing: border-box;
+        margin: 1.5rem 1rem;
         box-shadow: 0 0 10rem;
         overflow: hidden;
         position: relative;
-        @media screen and (min-width: 200rem) {
-            // width: 1200px;
-        }
         .row {
             // Replace row class of bootstrap
             margin-left: 0;
@@ -319,7 +320,7 @@ $app-name: "/XA-Product-Client";
                         left: 0;
                         height: $bar-height;
                         width: 100%;
-                        @include row2-background()
+                        @include row2-background();
                     }
                 }
                 &:last-child {
@@ -330,7 +331,7 @@ $app-name: "/XA-Product-Client";
                         left: 0;
                         height: $bar-height;
                         width: 100%;
-                        @include row2-background()
+                        @include row2-background();
                     }
                 }
             }
@@ -485,7 +486,7 @@ $app-name: "/XA-Product-Client";
                 }
                 .row {
                     .info {
-                        $info-border-color: #fff;
+                        $info-border-color: #51228e;
                         margin-top: 1em;
                         section {
                             height: 100%;
@@ -500,13 +501,11 @@ $app-name: "/XA-Product-Client";
                         }
 
                         article {
-                            &:nth-child(even) {
-                                border-right: 2px solid $info-border-color;
-                                border-top: 2px solid $info-border-color;
-                            }
                             &:nth-child(odd) {
                                 border-left: 2px solid $info-border-color;
-                                border-bottom: 2px solid $info-border-color;
+                            }
+                            &:nth-child(even) {
+                                border-right: 2px solid $info-border-color;
                             }
                         }
                     }
@@ -829,8 +828,7 @@ $app-name: "/XA-Product-Client";
         }
 
         .keywords {
-            padding: 0;
-            height: 200px;
+            padding: 3rem;
             font-size: 2rem;
             color: #b6dde2;
             background-color: #041f2d;
@@ -840,9 +838,7 @@ $app-name: "/XA-Product-Client";
                 font-size: 2em;
                 font-weight: bolder;
             }
-            article {
-                padding: 3rem 3rem 0 3rem;
-            }
+
             strong {
                 @include strong-tag();
             }
@@ -858,13 +854,13 @@ $app-name: "/XA-Product-Client";
         // box-shadow: unset !important;
         filter: none !important;
     }
-    $double-border-white-width: 1.5rem;
+    $double-border-white-width: 10px;
     $border-double-white: $double-border-white-width double rgb(230, 230, 230);
-    $border-solid: calc(#{$double-border-white-width}/ 3) solid #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
+    $border-solid: calc(#{$double-border-white-width} / 3) solid #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
     $main-purple: rgba(49, 34, 76, 0.9);
     $col1-width: 40%;
     $milestones-width: 35%;
-    $milestones-border-right-width: 1rem;
+    $milestones-border-right-width: 0.5em;
     $info-width: calc(100% - #{$milestones-width});
     $row1-height: 400px;
     $row1-width-border-bottom: 1rem;
@@ -975,11 +971,11 @@ $app-name: "/XA-Product-Client";
         }
     }
 
-    div[chckLoc="Intro"] {
+    .AboutMe {
         margin: auto;
-        // A4 side 150ppi
+        // A4 side 150ppi (height = 1754px,width = 1240px)
         width: 1240px;
-        height: 1754px;
+        // height: 1754px;
 
         // box-shadow: 0 0 10rem;
         overflow: hidden;
@@ -996,7 +992,7 @@ $app-name: "/XA-Product-Client";
             background-blend-mode: overlay;
             background-color: #24253080;
             border: 0;
-            border-bottom: 1rem solid #fff;
+            border-bottom: 0.5rem solid #fff;
             display: flex;
             font-size: 1rem;
             position: relative;
@@ -1107,7 +1103,7 @@ $app-name: "/XA-Product-Client";
             display: flex;
             font-size: 2rem;
             position: relative;
-            height: 850px;
+            // height: 850px;
             background-color: #cfd8dc;
             #milestones-area {
                 width: calc(
@@ -1127,7 +1123,7 @@ $app-name: "/XA-Product-Client";
                     @include milestones();
                     @include info();
                     &.y2017 {
-                        height: 70%;
+                        height: 60%;
                         .milestones {
                             &:after {
                                 content: "2017 ▲";
@@ -1141,7 +1137,7 @@ $app-name: "/XA-Product-Client";
                         }
                     }
                     &.y2018 {
-                        height: 20%;
+                        height: 25%;
                         .milestones {
                             &:after {
                                 content: "2018 ▲";
@@ -1156,7 +1152,7 @@ $app-name: "/XA-Product-Client";
                         }
                     }
                     &.y2019 {
-                        height: 10%;
+                        height: 15%;
                         .milestones {
                             &:after {
                                 content: "2019 ▲";
@@ -1182,7 +1178,7 @@ $app-name: "/XA-Product-Client";
                 .row {
                     .info {
                         $info-border-color: #30414c;
-                        margin: 2rem 1rem;
+                        margin: 1em 1em;
                         section {
                             height: 100%;
                         }
@@ -1193,12 +1189,11 @@ $app-name: "/XA-Product-Client";
                         h1 {
                             text-decoration: underline;
                             margin-left: 1em;
-                            margin-bottom: 0.5rem;
+                            margin-bottom: 0.5em;
                             font-weight: bolder;
                         }
                         article {
                             border-left: 2px solid $info-border-color;
-                            // border-bottom: 2px solid $info-border-color;
                         }
                     }
                 }
@@ -1209,7 +1204,7 @@ $app-name: "/XA-Product-Client";
             height: 244px;
             font-size: 2rem;
             background-color: #cfd8dc;
-            border-top: 1rem solid #fff;
+            border-top: 0.5rem solid #fff;
             h1 {
                 text-decoration: underline;
                 margin-left: 1em;
@@ -1217,26 +1212,24 @@ $app-name: "/XA-Product-Client";
                 font-weight: bolder;
             }
             article {
-                padding: 3rem 3rem 0 3rem;
+                padding: 1em 1em 0 1em;
                 &:not(:last-child) {
                     border-right: 2px solid #30414c;
                 }
             }
         }
         .keywords {
-            padding: 0;
-            height: 200px;
             font-size: 2rem;
             color: #b6dde2;
             background-color: #041f2d;
-            border-top: 1rem solid #fff;
+            border-top: 0.5rem solid #fff;
             h1 {
                 margin-bottom: 0.5em;
                 font-size: 2em;
                 font-weight: bolder;
             }
             article {
-                padding: 3rem 3rem 0 3rem;
+                padding: 1.5em 2em;
             }
             strong {
                 @include strong-tag();

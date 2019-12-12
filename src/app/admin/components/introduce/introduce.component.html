@@ -1,6 +1,9 @@
-<div chckLoc="Intro" class="AboutMe">
-    <ng-container>
-        <div class="row1" id="row1">
+<div chckLoc="Intro" id="IntroContainer" class="IntroContainer">
+    <div class="AboutMe">
+        <div
+            class="row1"
+            id="row1"
+        >
             <div id="contact">
                 <div class="name">
                     <h1>Huỳnh</h1>
@@ -9,7 +12,7 @@
                 <div class=" row">
                     <div class="row contact-info col-md-12">
                         <mat-icon class="icon">contact_phone</mat-icon>
-                        <p class="private-info">07.866.866.42</p>
+                        <p class="private-info">0905 265 791</p>
                     </div>
                     <div class="row contact-info col-md-12">
                         <mat-icon class="icon">email</mat-icon>
@@ -18,7 +21,7 @@
                         </p>
                     </div>
                     <div class="row contact-info col-md-12">
-                        <i class="icon fas fa-birthday-cake"></i>
+                        <i class="icon mat-icon fas fa-birthday-cake"></i>
                         <p class="private-info">
                             1994 March 19th
                         </p>
@@ -104,19 +107,25 @@
                                     Mobile-Friendly Version (2+ Months)
                                     <div class="list-technologies">
                                         <img
-                                            src="/assets/Icons/icon-javascript.jpg"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-javascript.jpg"
                                             class="icon-skill btn-hover-animate"
                                             alt="JavaScript"
                                             title="JavaScript"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-html5.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-html5.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="HTML5"
                                             title="HTML5"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-bootstrap.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-bootstrap.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="Bootstrap"
                                             title="Bootstrap"
@@ -127,26 +136,34 @@
                                     Creating New Website App (4+ Months)
                                     <div class="list-technologies">
                                         <img
-                                            src="/assets/Icons/icon-mongodb.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-mongodb.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="MongoDB"
                                             title="MongoDB"
                                             tooltip
                                         />
                                         <img
-                                            src="/assets/Icons/icon-expressjs.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-expressjs.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="ExpressJS"
                                             title="ExpressJS"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-angular.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-angular.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="Angular"
                                             title="Angular"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-nodejs.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-nodejs.png"
                                             class="icon-skill btn-hover-animate"
                                             alt="Nodejs"
                                             title="Nodejs"
@@ -200,15 +217,11 @@
             </aside>
             <div id="why-me" data-print="false">
                 <section class="row">
-                    <div class="info row">
-                        <div class="row col-md-12">
-                            <h1 class="col-md-6">Experience</h1>
-                            <h1 class="col-md-6">Education</h1>
-                        </div>
-
+                    <div class="info row col-md-12">
                         <div class="row col-md-12">
                             <article class="row col-md-6">
                                 <ul>
+                                    <h1>Experience</h1>
                                     <li>
                                         <strong>07/2017 - 05/2018:</strong>
                                         Fresher at DOUNETS
@@ -221,6 +234,7 @@
                             </article>
                             <article class="row col-md-6">
                                 <ul>
+                                    <h1>Education</h1>
                                     <li>
                                         <strong>2015-2017:</strong>
                                         Student at FPT-APTECH-HCM
@@ -230,15 +244,11 @@
                         </div>
                     </div>
 
-                    <div class="info row">
-                        <div class="row col-md-12">
-                            <h1 class="col-md-6">Certificate</h1>
-                            <h1 class="col-md-6">Reference Link</h1>
-                        </div>
-
+                    <div class="info row col-md-12">
                         <div class="row col-md-12">
                             <article class="row col-md-6">
                                 <ul>
+                                    <h1>Certificate</h1>
                                     <li>
                                         <strong
                                             >Higher Diploma In Software
@@ -250,6 +260,7 @@
                             </article>
                             <article class="row col-md-6">
                                 <ul>
+                                    <h1>Reference Link</h1>
                                     <li>
                                         <strong>The resume as HTML: </strong>
                                         <a
@@ -270,7 +281,7 @@
                                     </li>
                                     <li>
                                         <strong
-                                            >Transcript/Certificate/Merit:
+                                            >Transcript / Certificate / Merit:
                                         </strong>
                                         <a
                                             href="https://bit.ly/htt-achievement"
@@ -366,7 +377,9 @@
                             <div class="img-block">
                                 <div class="img-outer javascript">
                                     <img
-                                        src="/assets/Icons/icon-javascript.jpg"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-javascript.jpg"
                                         class="icon-skill btn-hover-animate javascript"
                                         alt="JavaScript"
                                         title="JavaScript"
@@ -375,7 +388,9 @@
 
                                 <div class="img-outer html5">
                                     <img
-                                        src="/assets/Icons/icon-html5.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-html5.png"
                                         class="icon-skill btn-hover-animate html5"
                                         alt="HTML5"
                                         title="HTML5"
@@ -384,7 +399,9 @@
 
                                 <div class="img-outer angular">
                                     <img
-                                        src="/assets/Icons/icon-angular.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-angular.png"
                                         class="icon-skill btn-hover-animate angular"
                                         alt="Angular"
                                         title="Angular"
@@ -392,7 +409,9 @@
                                 </div>
                                 <div class="img-outer typescript">
                                     <img
-                                        src="/assets/Icons/icon-typescript.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-typescript.png"
                                         class="icon-skill btn-hover-animate typescript"
                                         alt="TypeScript"
                                         title="TypeScript"
@@ -401,19 +420,25 @@
                                 <div class="img-outer about-css">
                                     <div class="part">
                                         <img
-                                            src="/assets/Icons/icon-css3.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-css3.png"
                                             class="icon-skill btn-hover-animate icon-css"
                                             alt="CSS3"
                                             title="CSS3"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-bootstrap.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-bootstrap.png"
                                             class="icon-skill btn-hover-animate icon-bootstrap"
                                             alt="Bootstrap"
                                             title="Bootstrap"
                                         />
                                         <img
-                                            src="/assets/Icons/icon-sass.png"
+                                            src="{{
+                                                appName
+                                            }}/assets/Icons/icon-sass.png"
                                             class="icon-skill btn-hover-animate icon-sass"
                                             alt="SASS.SCSS"
                                             title="SASS.SCSS"
@@ -427,7 +452,9 @@
                             <div class="img-block">
                                 <div class="img-outer nodejs">
                                     <img
-                                        src="/assets/Icons/icon-nodejs.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-nodejs.png"
                                         class="icon-skill btn-hover-animate nodejs"
                                         alt="NodeJS"
                                         title="NodeJS"
@@ -436,7 +463,9 @@
 
                                 <div class="img-outer graphql">
                                     <img
-                                        src="/assets/Icons/icon-graphql.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-graphql.png"
                                         class="icon-skill btn-hover-animate graphql"
                                         alt="Graphql"
                                         title="Graphql"
@@ -445,7 +474,9 @@
 
                                 <div class="img-outer mongodb">
                                     <img
-                                        src="/assets/Icons/icon-mongodb.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-mongodb.png"
                                         class="icon-skill btn-hover-animate mongodb"
                                         alt="MongoDB"
                                         title="MongoDB"
@@ -454,7 +485,9 @@
 
                                 <div class="img-outer restapi">
                                     <img
-                                        src="/assets/Icons/icon-restapi.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-restapi.png"
                                         class="icon-skill btn-hover-animate restapi"
                                         alt="REST API"
                                         title="REST API"
@@ -467,7 +500,9 @@
                             <div class="img-block">
                                 <div class="img-outer linux">
                                     <img
-                                        src="/assets/Icons/icon-linux.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-linux.png"
                                         class="icon-skill btn-hover-animate linux"
                                         alt="Linux"
                                         title="Linux"
@@ -476,7 +511,9 @@
 
                                 <div class="img-outer windows">
                                     <img
-                                        src="/assets/Icons/icon-windows.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-windows.png"
                                         class="icon-skill btn-hover-animate windows"
                                         alt="Windows"
                                         title="Windows"
@@ -485,7 +522,9 @@
 
                                 <div class="img-outer git">
                                     <img
-                                        src="/assets/Icons/icon-git.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-git.png"
                                         class="icon-skill btn-hover-animate git"
                                         alt="GIT"
                                         title="GIT"
@@ -494,7 +533,9 @@
 
                                 <div class="img-outer heroku">
                                     <img
-                                        src="/assets/Icons/icon-heroku.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-heroku.png"
                                         class="icon-skill btn-hover-animate heroku"
                                         alt="Heroku"
                                         title="Heroku"
@@ -503,7 +544,9 @@
 
                                 <div class="img-outer java">
                                     <img
-                                        src="/assets/Icons/icon-java.png"
+                                        src="{{
+                                            appName
+                                        }}/assets/Icons/icon-java.png"
                                         class="icon-skill btn-hover-animate java"
                                         alt="JAVA"
                                         title="JAVA"
@@ -628,7 +671,7 @@
         </div>
 
         <aside class="another-skill row col-md-12">
-            <article class="col-md-4">
+            <article class="col-4">
                 <h1>Front-End Technology</h1>
                 <ul>
                     <li>Angular2+, TypeScript</li>
@@ -637,7 +680,7 @@
                     <li>HTML5</li>
                 </ul>
             </article>
-            <article class="col-md-4">
+            <article class="col-4">
                 <h1>Back-End Technology</h1>
                 <ul>
                     <li>NodeJs</li>
@@ -646,7 +689,7 @@
                 </ul>
             </article>
 
-            <article class="col-md-4">
+            <article class="col-4">
                 <h1>Platform</h1>
                 <ul>
                     <li>Windows, Linux (Ubuntu)</li>
@@ -665,5 +708,5 @@
                 </p>
             </article>
         </aside>
-    </ng-container>
+    </div>
 </div>

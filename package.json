@@ -5,13 +5,14 @@
     "scripts": {
         "ng": "ng",
         "dev": "ng serve --base-href /",
-        "build": "ng build --prod --base-href /",
+        "build": "ng build --prod --base-href /XA-Product-Client",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
         "deploy": "ng deploy",
         "logs": "heroku logs --tail",
-        "heroku": "git add . && git commit -m 'auto-deploy' && git push heroku master"
+        "heroku": "git add . && git commit -m 'auto-deploy' && git push heroku master",
+        "prod": "npm run build && node server.js"
     },
     "private": true,
     "dependencies": {

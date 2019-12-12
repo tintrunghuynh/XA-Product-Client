@@ -1,17 +1,24 @@
 import { Component, OnInit, DoCheck, HostListener } from "@angular/core";
+import { environment } from "src/environments/environment";
 import { ActivatedRoute } from "@angular/router"; @Component({
     selector: "app-introduce",
     templateUrl: "./introduce.component.html",
     styleUrls: ["./introduce.component.scss"]
 })
 export class IntroduceComponent implements OnInit, DoCheck {
+    appName;
     style: object = {};
     params: object = {};
-    width = 100;
-    height = 100;
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
+        if (environment.production) {
+            this.appName = "/XA-Product-Client";
+        } else {
+            this.appName = "";
+        }
+        (document.getElementsByClassName("row1")[0] as HTMLElement).style.background =
+            `rgba(51, 51, 51, 0.4) url("${this.appName}/assets/Imgs/keyboard_rgb.jpg") 0% 45% / cover no-repeat`;
         this.addHover();
         this.setStyleParticles();
     }
