@@ -18,7 +18,6 @@ $app-name: "/XA-Product-Client";
     // Variable
     $double-border-white-width: 1.5rem;
     $border-double-white: $double-border-white-width double rgb(230, 230, 230);
-    $border-solid: calc(#{$double-border-white-width}/ 3) solid #e6e6e6; // divided for 3 because border double style has 3 parts: solid/space/solid
     $main-purple: rgba(49, 34, 76, 0.9);
     $col1-width: 40%;
     $milestones-width: 35%;
@@ -415,7 +414,8 @@ $app-name: "/XA-Product-Client";
                 flex-direction: column-reverse;
                 justify-content: space-between;
                 border: 0;
-                border-right: $border-solid;
+                border-right: calc(#{$double-border-white-width} / 3) solid
+                    #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
                 [year] {
                     &:hover {
                         > .milestones:after {
@@ -856,7 +856,6 @@ $app-name: "/XA-Product-Client";
     }
     $double-border-white-width: 10px;
     $border-double-white: $double-border-white-width double rgb(230, 230, 230);
-    $border-solid: calc(#{$double-border-white-width} / 3) solid #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
     $main-purple: rgba(49, 34, 76, 0.9);
     $col1-width: 40%;
     $milestones-width: 35%;
@@ -1113,7 +1112,8 @@ $app-name: "/XA-Product-Client";
                 flex-direction: column-reverse;
                 justify-content: space-between;
                 border: 0;
-                border-right: $border-solid;
+                border-right: calc(#{$double-border-white-width} / 3) solid
+                    #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
                 [year] {
                     width: 100%;
                     position: relative;
