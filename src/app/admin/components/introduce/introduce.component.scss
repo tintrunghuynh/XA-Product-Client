@@ -396,7 +396,6 @@ $app-name: "/XA-Product-Client";
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content: space-between;
-
                 border-right: calc(#{$double-border-white-width} / 3) solid
                     #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
                 border-right-width: calc(
@@ -1084,7 +1083,6 @@ $app-name: "/XA-Product-Client";
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content: space-between;
-                border: 0;
                 border-right: calc(#{$double-border-white-width} / 3) solid
                     #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
                 border-right-width: calc(
