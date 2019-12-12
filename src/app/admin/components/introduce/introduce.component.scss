@@ -17,7 +17,7 @@ $app-name: "/XA-Product-Client";
     // }
     // Variable
     $double-border-white-width: 1.5rem;
-    $border-double-white: $double-border-white-width double rgb(230, 230, 230);
+    $border-double-white: $double-border-white-width double #ffffff80;
     $main-purple: rgba(49, 34, 76, 0.9);
     $col1-width: 40%;
     $milestones-width: 35%;
@@ -142,7 +142,7 @@ $app-name: "/XA-Product-Client";
                 filter: drop-shadow(0 0 0);
                 background-color: rgba(51, 51, 77, 0.9);
                 position: absolute;
-                top: 0;
+                top: 5px;
                 right: 10%;
                 width: calc(#{$info-width} + #{$info-margin-right} - 20%);
                 height: 0.2em;
@@ -172,6 +172,16 @@ $app-name: "/XA-Product-Client";
         background-size: cover;
         */
         background-blend-mode: overlay;
+        clip-path: polygon(
+            0% 0%,
+            40% 0%,
+            40% 10%,
+            100% 10%,
+            100% 90%,
+            40% 90%,
+            40% calc(100% - 1rem),
+            0% calc(100% - 1rem)
+        );
     }
 
     @mixin strong-tag {
@@ -201,179 +211,152 @@ $app-name: "/XA-Product-Client";
         .row1 {
             @include row1-background();
             border: 0;
-            border-bottom: 1rem solid #fff;
             display: flex;
             min-height: $row1-height;
             position: relative;
-        }
-        #contact {
-            min-width: $col1-width;
-            text-align: center;
-            border: 0;
-            border-right: $border-double-white;
-            // background: rgba(224, 129, 227, 0.2);
-            background: rgba(50, 31, 43, 0.15);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            .name {
-                margin: 1rem 0 1rem 0;
+            $row1-padding-bottom: calc(5%);
+            #contact {
+                min-width: $col1-width;
+                text-align: center;
+                border: 0;
+                border-right: $border-double-white;
+                // background: rgba(224, 129, 227, 0.2);
+                background: rgba(50, 31, 43, 0.15);
+                position: relative;
                 display: flex;
                 flex-direction: column;
-                > h1 {
-                    margin: auto;
-                    color: #ff4347;
-                    font-family: "Pacifico", cursive;
-                    font-size: 4em;
-                    font-weight: 1000;
-                    letter-spacing: 0.15em;
-                    filter: drop-shadow(
-                        0.06em 0.06em 0 #ff4347
-                    ); // Using filter instead box-shadow for printer
-                    -webkit-text-stroke: 0.03em #fff;
-                    text-shadow: 0 0 3em #512da8;
-                    text-transform: capitalize;
-                    &:last-child {
-                        margin-bottom: 2rem;
-                    }
-                }
-            }
-
-            .row {
-                .contact-info {
-                    margin: 0.2em 0 0.2em 0;
-                    align-items: center;
+                position: relative;
+                .name {
+                    margin: 1rem 0 1rem 0;
                     display: flex;
-                    flex-wrap: nowrap;
-                    justify-content: flex-start;
-                    color: rgb(232, 232, 232);
-                    background-color: $main-purple;
-                    border: none;
-                    border-top: 1px solid #fff;
-                    border-bottom: 1px solid #fff;
-                    overflow: hidden;
+                    flex-direction: column;
+                    > h1 {
+                        margin: auto;
+                        color: #ff4347;
+                        font-family: "Pacifico", cursive;
+                        font-size: 4em;
+                        font-weight: 1000;
+                        letter-spacing: 0.15em;
+                        filter: drop-shadow(
+                            0.06em 0.06em 0 #ff4347
+                        ); // Using filter instead box-shadow for printer
+                        -webkit-text-stroke: 0.03em #fff;
+                        text-shadow: 0 0 3em #512da8;
+                        text-transform: capitalize;
+                        &:last-child {
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
 
-                    .icon {
-                        margin: 0em 0.5em 0em 0.2em;
-                        color: #fff;
-                        font-size: calc(1em * 1.2);
-                        height: unset;
-                        width: unset;
-                        > svg {
-                            height: 100%;
-                            width: 1em;
-                            line-height: 1.5;
+                .row {
+                    .contact-info {
+                        margin: 0.2em 0 0.2em 0;
+                        padding: 0 0.1em;
+                        align-items: center;
+                        color: rgb(232, 232, 232);
+                        background-color: $main-purple;
+                        border-top: 1px solid #fff;
+                        border-bottom: 1px solid #fff;
+                        overflow: hidden;
+                        .icon {
+                            margin: 0em 0.5em 0em 0.2em;
+                            color: #fff;
+                            font-size: calc(1em * 1.2);
+                            height: unset;
+                            width: unset;
+                            > svg {
+                                height: 100%;
+                                width: 1em;
+                                line-height: 1.5;
+                            }
+                        }
+                        .private-info {
+                            margin: calc(0.2em + 1em / 3) 0;
+                            font-weight: 600;
                         }
                     }
-                    .private-info {
-                        margin: calc(0.2em + 1em / 3) 0;
-                        font-weight: 600;
-                    }
+                }
+                .null-space {
+                    height: 1rem;
                 }
             }
-        }
-        #panel {
-            color: #fff;
-            min-width: calc(100% - #{$col1-width});
-            display: inline-flex;
-            flex-direction: column;
-            border: 0;
-            position: relative;
-            @mixin row2-background {
-                background-color: #ffffff;
-                background-image: linear-gradient(
-                    90deg,
-                    rgba(200, 32, 32, 0.1) -17%,
-                    rgba(77, 166, 255, 0.5),
-                    rgba(77, 166, 255, 0.5)
-                );
-            }
-            $bar-height: 3em;
-            &:before {
-                content: "";
-                position: absolute;
-                left: 3em;
-                top: 0;
-                height: 100%;
-                width: 1em;
-                // box-shadow: 2em 0 #fff; // Using filter instead for printer
-                filter: drop-shadow(
-                    1.5em 0 0 #a5d2fe
-                ); // Using filter instead box-shadow for printer
-                background-image: linear-gradient(
-                    transparent,
-                    #e3e7ff,
-                    transparent
-                );
-                background-attachment: fixed;
-            }
-            .panel-bar {
-                height: $bar-height;
-                $bar-color: #fff;
-                width: 100%;
-                &:first-child {
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        top: 0;
-                        left: 0;
-                        height: $bar-height;
-                        width: 100%;
-                        @include row2-background();
-                    }
-                }
-                &:last-child {
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        bottom: 0;
-                        left: 0;
-                        height: $bar-height;
-                        width: 100%;
-                        @include row2-background();
-                    }
-                }
-            }
+            #panel {
+                color: #fff;
+                min-width: calc(100% - #{$col1-width});
+                display: inline-flex;
+                flex-direction: column;
+                border: 0;
+                position: relative;
 
-            .about-career {
-                margin: auto;
-                > h1 {
-                    margin: auto 0 1rem 0.5em;
-                    font-weight: 1000;
-                    font-size: 2.5em;
-                    animation-name: change-color;
-                    animation-duration: 4s;
-                    animation-iteration-count: infinite;
-                    -webkit-text-stroke: 0.05em #6e4b82;
-                    color: #0de3ffd6;
-                    text-shadow: 0.07em 0.07em #fff;
-                    filter: drop-shadow(0.07em 0.07em 0 #4d394d96);
+                @mixin row2-background {
+                    background-color: #ffffff;
+                    background-image: linear-gradient(
+                        90deg,
+                        rgba(200, 32, 32, 0.1) -17%,
+                        rgba(77, 166, 255, 0.5),
+                        rgba(77, 166, 255, 0.5)
+                    );
+                }
+                $bar-height: 3em;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 3em;
+                    top: 0;
+                    height: 100%;
+                    width: 1em;
+                    // box-shadow: 2em 0 #fff; // Using filter instead for printer
+                    filter: drop-shadow(
+                        1.5em 0 0 #a5d2fe
+                    ); // Using filter instead box-shadow for printer
+                    background-image: linear-gradient(
+                        transparent,
+                        #e3e7ff,
+                        transparent
+                    );
+                    background-attachment: fixed;
+                }
+                .about-career {
+                    margin: auto;
+                    > h1 {
+                        margin: auto 0 1rem 0.5em;
+                        font-weight: 1000;
+                        font-size: 2.5em;
+                        animation-name: change-color;
+                        animation-duration: 4s;
+                        animation-iteration-count: infinite;
+                        -webkit-text-stroke: 0.05em #6e4b82;
+                        color: #0de3ffd6;
+                        text-shadow: 0.07em 0.07em #fff;
+                        filter: drop-shadow(0.07em 0.07em 0 #4d394d96);
 
-                    @keyframes change-color {
-                        0% {
-                            color: #0de3ffd6;
-                            text-shadow: 0.07em 0.07em #fff;
-                        }
-                        50% {
-                            color: #ffae79;
-                            text-shadow: 0.07em 0.07em #fff;
-                        }
-                        100% {
-                            color: #0de3ffd6;
-                            text-shadow: 0.07em 0.07em #fff;
+                        @keyframes change-color {
+                            0% {
+                                color: #0de3ffd6;
+                                text-shadow: 0.07em 0.07em #fff;
+                            }
+                            50% {
+                                color: #ffae79;
+                                text-shadow: 0.07em 0.07em #fff;
+                            }
+                            100% {
+                                color: #0de3ffd6;
+                                text-shadow: 0.07em 0.07em #fff;
+                            }
                         }
                     }
-                }
-                p.who-am-i {
-                    margin: auto 1em auto 6em;
-                    padding: 0.5rem 1rem;
-                    border: 2px solid #fff;
-                    font-size: 2rem;
-                    text-align: justify;
-                    background-color: #425d5a6e;
-                    box-shadow: 0 0 1em !important;
-                    strong {
-                        @include strong-tag();
+                    p.who-am-i {
+                        margin: auto 1em auto 6em;
+                        padding: 0.5rem 1rem;
+                        border: 2px solid #fff;
+                        font-size: 2rem;
+                        text-align: justify;
+                        background-color: #425d5a6e;
+                        box-shadow: 0 0 1em !important;
+                        strong {
+                            @include strong-tag();
+                        }
                     }
                 }
             }
@@ -413,9 +396,12 @@ $app-name: "/XA-Product-Client";
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content: space-between;
-                border: 0;
+
                 border-right: calc(#{$double-border-white-width} / 3) solid
                     #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
+                border-right-width: calc(
+                    #{$double-border-white-width} / 3
+                ); // adding this because width of border-right shorthand is not working
                 [year] {
                     &:hover {
                         > .milestones:after {
@@ -498,15 +484,6 @@ $app-name: "/XA-Product-Client";
                         h1 {
                             text-decoration: underline;
                             margin-bottom: 0.5rem;
-                        }
-
-                        article {
-                            &:nth-child(odd) {
-                                border-left: 2px solid $info-border-color;
-                            }
-                            &:nth-child(even) {
-                                border-right: 2px solid $info-border-color;
-                            }
                         }
                     }
                 }
@@ -944,7 +921,7 @@ $app-name: "/XA-Product-Client";
                 // box-shadow: -0 -0.5 rgba(51, 51, 77, 0.9);
                 background-color: rgba(51, 51, 77, 0.9);
                 position: absolute;
-                top: 0;
+                top: 0px;
                 right: 10%;
                 width: calc(#{$info-width} + #{$info-margin-right} - 20%);
                 height: 0.2em;
@@ -991,7 +968,6 @@ $app-name: "/XA-Product-Client";
             background-blend-mode: overlay;
             background-color: #24253080;
             border: 0;
-            border-bottom: 0.5rem solid #fff;
             display: flex;
             font-size: 1rem;
             position: relative;
@@ -1067,9 +1043,6 @@ $app-name: "/XA-Product-Client";
                 background: #041f2d;
                 background-blend-mode: overlay;
                 position: relative;
-                .panel-bar {
-                    display: none;
-                }
 
                 .about-career {
                     margin: auto;
@@ -1114,6 +1087,9 @@ $app-name: "/XA-Product-Client";
                 border: 0;
                 border-right: calc(#{$double-border-white-width} / 3) solid
                     #30414c; // divided for 3 because border double style has 3 parts: solid/space/solid
+                border-right-width: calc(
+                    #{$double-border-white-width} / 3
+                ); // adding this because width of border-right shorthand is not working
                 [year] {
                     width: 100%;
                     position: relative;
