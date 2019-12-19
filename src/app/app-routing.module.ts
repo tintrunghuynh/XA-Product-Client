@@ -86,17 +86,11 @@ const routes: Routes = [
     },
     {
         path: "aboutme",
-        component: IntroduceComponent,
-        //     children: [
-        //         {
-        //             path: "login", component: LoginComponent
-        //         }, {
-        //             path: "register", component: RegisterComponent
-        //         },
-        //         {
-        //             path: "profile", component: ProfileComponent
-        //         }
-        //     ]
+        children: [
+            {
+                path: "", component: IntroduceComponent
+            }
+        ]
     },
     {
         path: "**",
